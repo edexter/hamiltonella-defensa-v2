@@ -1,0 +1,41 @@
+# Audit of the 2024 blobtools read filter.
+#
+# QUESTION: the 2024 pipeline assembled each sample's whole metagenome with
+# hifiasm, used blobtools to discard non-Hamiltonella contigs, then kept only
+# reads that aligned to what survived. Everything downstream inherits that
+# decision, and it had never been tested. Did it discard real Hamiltonella or
+# APSE sequence?
+#
+# METHOD: for all 14 samples, every contig present in the pre-filter assembly
+# but absent from the filtered one was aligned against Hamiltonella defensa 5AT
+# (GCA_000021705.1) and against the v2 APSE references. Any dropped contig with
+# substantial, high-identity similarity is a candidate false positive. Each
+# candidate was then tested for whether its sequence survives elsewhere in the
+# retained assembly.
+#
+# CALIBRATION: our own retained chromosomes align to 5AT at 91.1-94.6 % weighted
+# identity over 1.5-2.0 Mb. Anything below ~91 % is therefore not Hamiltonella.
+#
+# RESULT: 68,863 contigs were examined across the panel. At a threshold of >=1 kb
+# aligned at >=88 % identity, 13 dropped contigs were flagged. Two of them carry
+# genuine Hamiltonella or APSE sequence -- and both are fully present in the
+# retained assembly, so nothing was lost. The other eleven are large contigs
+# (50-647 kb) in which only 1.5-2.5 kb aligns, at 88.3-89.8 %, below the genuine
+# range: a short conserved element inside aphid or other contigs.
+#
+# CONCLUSION: the blobtools filter did not remove Hamiltonella or APSE sequence.
+# The read-level stage of the audit was therefore not required.
+sample	contig	contig_bp	aligned_bp	identity	pct_present_in_retained	verdict
+S12	ptg002288l	14711	15062	0.998	100	genuine Hdef+APSE, fully retained - correctly dropped as redundant
+S09	ptg002898l	12538	13159	0.903	119	genuine Hdef, fully retained (repeats) - correctly dropped as redundant
+S04	ptg004694l	18191	2479	0.898	14	only 14 % of the contig; identity below the genuine range - not Hamiltonella
+S05	ptg000969l	64915	2425	0.892	11	short conserved element in a larger contig - not Hamiltonella
+S05	ptg003863l	41674	2425	0.892	6	short conserved element in a larger contig - not Hamiltonella
+S01	ptg000148l	169341	1558	0.883	1	short conserved element in a larger contig - not Hamiltonella
+S04	ptg000379l	49656	1558	0.883	3	short conserved element in a larger contig - not Hamiltonella
+S07	ptg002360l	117692	1558	0.883	1	short conserved element in a larger contig - not Hamiltonella
+S09	ptg000908l	83856	1558	0.883	2	short conserved element in a larger contig - not Hamiltonella
+S11	ptg000022c	634705	1558	0.883	1	short conserved element in a larger contig - not Hamiltonella
+S12	ptg000011c	634706	1558	0.883	1	short conserved element in a larger contig - not Hamiltonella
+S13	ptg000201l	647492	1558	0.883	1	short conserved element in a larger contig - not Hamiltonella
+S14	ptg000163c	634706	1558	0.883	1	short conserved element in a larger contig - not Hamiltonella

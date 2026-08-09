@@ -1,0 +1,23 @@
+# APSE prophage integration sites in Hamiltonella defensa S05 (strain H76).
+# Coordinates are 1-based inclusive and refer to the delivered 2024 curated
+# contigs, so they can be applied to the published assembly. S05's chromosome is
+# in fragments, hence the contig column.
+# The ~805 kb site is POLYMORPHIC: the RHS phage and the recombinant hapA share
+# integrase type A and therefore the same att core, so a given cell carries one
+# or the other.
+#
+# Occupancy can only be counted on the attL side (chromosome 805,721). On the
+# attR side hapA is RHS-derived and the two are identical, so reads there cannot
+# be assigned. At attL the filtered read set gives RHS 5 : hapA 7; an earlier
+# count on the full raw read set, before hapA was fully characterised, gave
+# 15 : 5 the other way. Both are small and they disagree, so OCCUPANCY AT THIS
+# SITE IS NOT DETERMINED beyond "both lineages are common". Resolving it needs
+# deeper chromosome coverage, which is 10-14x here.
+#
+# assemblies_v2/S05_v2.fasta carries the RHS phage at this site because it is
+# the complete circular lineage and the one already in the 2024 delivery; hapA
+# is supplied as a separate reference, not because it is rarer.
+sample	site	contig	chr_attB_start	chr_attB_end	att_core_len	att_core_seq	phage	phage_attP_start	phage_attP_end	integrase_type	toxin	junction_reads	locus
+S05	1	contig_02	187054	187111	58	GGGACTTAAAATCCCTTGGCTTATGGCTGTGCGGGTTCAAGTCCCGCCTCGGGTACCA	S05_APSE_CdtB_hapR_v2	38923	38980	B	CdtB	26	tRNA gene 3' end
+S05	2	contig_11	805721	805782	62	TAACCCCTTGATTTTATTGGTACGCCCTACTGGATTCGAACCAGTGACCTACGGCTTAGAAG	S05_APSE_RHS_v2	30748	30809	A	RHS	5	tRNA gene 3' end (attL-side count)
+S05	2	contig_11	805721	805782	62	TAACCCCTTGATTTTATTGGTACGCCCTACTGGATTCGAACCAGTGACCTACGGCTTAGAAG	S05_APSE_CdtB_hapA_v2	18393	18454	A	CdtB	7	tRNA gene 3' end (attL-side count, alternative occupant)

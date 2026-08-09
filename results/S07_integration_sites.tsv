@@ -1,0 +1,11 @@
+# APSE prophage integration sites in Hamiltonella defensa S07 (strain H101).
+# Coordinates are 1-based inclusive and refer to the delivered 2024 chromosome
+# contig_02 (2,066,358 bp), so they can be applied to the published assembly.
+# att_core is the direct repeat duplicated by integration; it is present once in
+# the uninfected chromosome (attB) and once in the free phage (attP), and twice
+# (attL, attR) once the prophage is in place.
+# lysogenic  = reads crossing an att boundary from chromosome into phage
+# excised    = reads running continuously across the empty attB
+sample	site	chr_attB_start	chr_attB_end	att_core_len	att_core_seq	phage	phage_attP_start	phage_attP_end	orientation	integrase_type	toxin	lysogenic_reads	excised_reads	locus
+S07	1	757236	757297	62	CTTCTAAGCCGTAGGTCACTGGTTCGAATCCAGTAGGGCGTACCAATAAAATCAAGGGGTTA	S07_APSE_RHS_v2	17562	17623	forward	A	RHS	88	4	tRNA gene 3' end
+S07	2	1878390	1878447	58	TGGTACCCGAGGCGGGACTTGAACCCGCACAGCCATAAGCCAAGGGATTTTAAGTCCC	S07_APSE_CdtB_v2	34040	34097	reverse	B	CdtB	89	1	tRNA gene 3' end

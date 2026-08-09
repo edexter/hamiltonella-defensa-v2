@@ -1,0 +1,72 @@
+### S07_RHS : 10 disjoint replicates of 670 reads
+  rep1: 670 reads, ~150x
+  rep2: 670 reads, ~151x
+  rep3: 670 reads, ~151x
+  rep4: 670 reads, ~149x
+  rep5: 670 reads, ~147x
+  rep6: 670 reads, ~148x
+  rep7: 670 reads, ~147x
+  rep8: 670 reads, ~149x
+  rep9: 670 reads, ~148x
+  rep10: 670 reads, ~149x
+### S07_CdtB : 7 disjoint replicates of 670 reads
+  rep1: 670 reads, ~146x
+  rep2: 670 reads, ~147x
+  rep3: 670 reads, ~149x
+  rep4: 670 reads, ~148x
+  rep5: 670 reads, ~149x
+  rep6: 670 reads, ~147x
+  rep7: 670 reads, ~149x
+### S05_RHS : 6 disjoint replicates of 670 reads
+  rep1: 670 reads, ~138x
+  rep2: 670 reads, ~138x
+  rep3: 670 reads, ~138x
+  rep4: 670 reads, ~137x
+  rep5: 670 reads, ~138x
+  rep6: 670 reads, ~136x
+### S05_hapA : 2 disjoint replicates of 670 reads
+  rep1: 670 reads, ~134x
+  rep2: 670 reads, ~133x
+### S05_hapR : 2 disjoint replicates of 365 reads
+  rep1: 365 reads, ~72x
+  rep2: 365 reads, ~71x
+### disjointness check
+  S07_RHS: 0 reads appear in more than one replicate (must be 0)
+  S07_CdtB: 0 reads appear in more than one replicate (must be 0)
+  S05_RHS: 0 reads appear in more than one replicate (must be 0)
+  S05_hapA: 0 reads appear in more than one replicate (must be 0)
+  S05_hapR: 0 reads appear in more than one replicate (must be 0)
+  S07_RHS_rep1       contig_1     39306 bp  cov   155  circular=Y
+  S07_RHS_rep2       contig_1     39306 bp  cov   156  circular=Y
+  S07_RHS_rep3       contig_1     39306 bp  cov   151  circular=Y
+  S07_RHS_rep4       contig_2     39306 bp  cov   148  circular=Y
+  S07_RHS_rep4       contig_1     10555 bp  cov     5  circular=N
+  S07_RHS_rep5       contig_1     39306 bp  cov   149  circular=Y
+  S07_RHS_rep6       contig_1     39306 bp  cov   149  circular=Y
+  S07_RHS_rep7       contig_2     39306 bp  cov   150  circular=Y
+  S07_RHS_rep7       contig_1      6903 bp  cov     3  circular=N
+  S07_RHS_rep8       contig_1     39306 bp  cov   149  circular=Y
+  S07_RHS_rep9       contig_1     39306 bp  cov   154  circular=Y
+  S07_RHS_rep10      contig_1     39306 bp  cov   154  circular=Y
+  S07_CdtB_rep1      contig_2     38993 bp  cov   145  circular=Y
+  S07_CdtB_rep1      contig_1      7097 bp  cov     3  circular=N
+  S07_CdtB_rep2      contig_1     38993 bp  cov   140  circular=Y
+  S07_CdtB_rep3      contig_2     38993 bp  cov   149  circular=Y
+  S07_CdtB_rep3      contig_1      9951 bp  cov     4  circular=N
+  S07_CdtB_rep4      contig_2     38993 bp  cov   150  circular=Y
+  S07_CdtB_rep4      contig_1      6332 bp  cov     3  circular=N
+  S07_CdtB_rep5      contig_1     38993 bp  cov   154  circular=Y
+  S07_CdtB_rep6      contig_1     38993 bp  cov   149  circular=Y
+  S07_CdtB_rep7      contig_2     38993 bp  cov   148  circular=Y
+  S07_CdtB_rep7      contig_1     11764 bp  cov     4  circular=N
+  S05_RHS_rep1       contig_1     39289 bp  cov   135  circular=Y
+  S05_RHS_rep2       contig_1     39289 bp  cov   138  circular=Y
+  S05_RHS_rep3       contig_1     39307 bp  cov   133  circular=Y
+  S05_RHS_rep4       contig_1     39289 bp  cov   136  circular=Y
+  S05_RHS_rep5       contig_1     39313 bp  cov   137  circular=Y
+  S05_RHS_rep6       contig_1     39289 bp  cov   138  circular=Y
+  S05_hapA_rep1      contig_3     34915 bp  cov    95  circular=N
+  S05_hapA_rep2      contig_2     33657 bp  cov   104  circular=N
+  S05_hapR_rep1      contig_2     38980 bp  cov    62  circular=Y
+  S05_hapR_rep1      contig_1      6294 bp  cov     5  circular=N
+  S05_hapR_rep2      contig_1     38980 bp  cov    61  circular=Y

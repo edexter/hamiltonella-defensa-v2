@@ -1,0 +1,169 @@
+File = S01_v2.fasta   (7 contigs, 2,290,146 bp)
+  contig_01 (1,968,083 bp linear): H. defensa chromosome
+  contig_03 (68,560 bp circular): H. defensa plasmid pH15_1
+  contig_05 (12,032 bp circular): H. defensa plasmid pH15_2
+  contig_06 (82,412 bp circular): H. defensa plasmid pH15_3
+  contig_07 (31,643 bp circular): H. defensa plasmid pH15_4
+  contig_08 (78,251 bp circular): H. defensa plasmid pH15_5
+  contig_09 (49,165 bp circular): H. defensa plasmid pH15_6
+
+File = S01_APSE_v2.fasta
+  S01_APSE (39,092 bp circular): APSE bacteriophage (complete), lineage APSE-RHS-I
+
+File = S02_v2.fasta   (13 contigs, 2,008,890 bp)
+  contig_01 (164,507 bp linear): Segment of H. defensa chromosome
+  contig_05 (366,167 bp linear): Segment of H. defensa chromosome
+  contig_10 (54,237 bp circular): H. defensa plasmid pH16_2
+  contig_11 (1,150,584 bp linear): Segment of H. defensa chromosome
+  contig_13 (40,864 bp circular): APSE
+  contig_14 (34,751 bp circular): H. defensa plasmid pH16_1
+  contig_02-04, 07-09, 12 (7 contigs, 17,629-43,999 bp, all linear): Unplaced H. defensa contigs
+
+File = S02_APSE_v2.fasta
+  S02_APSE (40,864 bp circular): APSE bacteriophage (complete), lineage APSE-LeucineRich-I
+
+File = S03_v2.fasta   (17 contigs, 1,940,796 bp)
+  contig_03 (154,738 bp linear): Segment of H. defensa chromosome
+  contig_04 (113,231 bp linear): Segment of H. defensa chromosome
+  contig_16 (534,713 bp linear): Segment of H. defensa chromosome
+  contig_18 (259,100 bp linear): Segment of H. defensa chromosome
+  contig_19 (179,609 bp linear): Segment of H. defensa chromosome
+  contig_21 (223,302 bp linear): Segment of H. defensa chromosome
+  contig_01, 02, 05-09, 11, 14, 17, 20 (11 contigs, 14,633-96,454 bp, all linear): Unplaced H. defensa contigs
+
+File = S03_APSE_v2.fasta
+  S03_APSE (35,455 bp circular): APSE bacteriophage (complete), lineage APSE-CdtB-I
+
+File = S04_v2.fasta   (2 contigs, 2,151,406 bp)
+  contig_01 (2,111,329 bp linear): H. defensa chromosome
+  contig_04 (40,077 bp circular): H. defensa plasmid pH42_1
+
+File = S04_APSE_v2.fasta
+  S04_APSE (35,455 bp circular): APSE bacteriophage (complete), lineage APSE-CdtB-I
+
+File = S05_v2.fasta   (12 contigs, 2,255,398 bp)
+  contig_01 (428,393 bp linear): Segment of H. defensa chromosome
+  contig_02 (249,175 bp linear): Segment of H. defensa chromosome — APSE-CdtB (hapR) prophage integrated at attB 187054
+  contig_06 (16,754 bp linear): Unplaced H. defensa contig
+  contig_07 (54,959 bp linear): Unplaced H. defensa contig
+  contig_08 (46,796 bp circular): H. defensa plasmid pH76_3
+  contig_09 (272,758 bp linear): Segment of H. defensa chromosome
+  contig_10 (156,002 bp linear): Segment of H. defensa chromosome
+  contig_11 (850,481 bp linear): Segment of H. defensa chromosome — APSE-RHS prophage integrated at attB 805721
+  contig_13 (39,266 bp linear): Unplaced H. defensa contig
+  contig_19 (73,402 bp circular): H. defensa plasmid pH76_4
+  contig_20 (31,557 bp circular): H. defensa plasmid pH76_1
+  contig_21 (35,855 bp circular): H. defensa plasmid pH76_2
+
+File = S05_APSE_CdtB_hapA_v2.fasta
+  S05_APSE_CdtB_hapA_v2 (36,248 bp linear): APSE bacteriophage (partial)
+
+File = S05_APSE_CdtB_hapR_v2.fasta
+  S05_APSE_CdtB_hapR_v2 (38,980 bp circular): APSE bacteriophage (complete)
+
+File = S05_APSE_RHS_alt_v2.fasta
+  S05_APSE_RHS_alt_v2 (39,307 bp circular): APSE bacteriophage (complete)
+
+File = S05_APSE_RHS_v2.fasta
+  S05_APSE_RHS_v2 (39,289 bp circular): APSE bacteriophage (complete)
+
+File = S06_v2.fasta   (7 contigs, 2,294,161 bp)
+  contig_01 (1,972,121 bp linear): H. defensa chromosome
+  contig_03 (12,010 bp circular): H. defensa plasmid pH85_1
+  contig_04 (78,251 bp circular): H. defensa plasmid pH85_2
+  contig_05 (68,560 bp circular): H. defensa plasmid pH85_3
+  contig_07 (49,165 bp circular): H. defensa plasmid pH85_4
+  contig_08 (82,411 bp circular): H. defensa plasmid pH85_5
+  contig_09 (31,643 bp circular): H. defensa plasmid pH85_6
+
+File = S06_APSE_v2.fasta
+  S06_APSE (39,093 bp linear): APSE bacteriophage (complete), lineage APSE-RHS-I
+
+File = S07_v2.fasta   (4 contigs, 2,287,822 bp)
+  contig_02 (2,144,657 bp linear): H. defensa chromosome — APSE-RHS and APSE-CdtB prophages integrated at attB 757236 and 1878390
+  contig_07 (75,753 bp circular): H. defensa plasmid pH101_1
+  contig_08 (31,557 bp circular): H. defensa plasmid pH101_2
+  contig_09 (35,855 bp circular): H. defensa plasmid pH101_3
+
+File = S07_APSE_CdtB_v2.fasta
+  S07_APSE_CdtB_v2 (38,993 bp circular): APSE bacteriophage (complete)
+
+File = S07_APSE_RHS_v2.fasta
+  S07_APSE_RHS_v2 (39,306 bp circular): APSE bacteriophage (complete)
+
+File = S08_v2.fasta   (30 contigs, 2,059,977 bp)
+  contig_05 (121,076 bp linear): Segment of H. defensa chromosome
+  contig_10 (107,973 bp linear): Segment of H. defensa chromosome
+  contig_11 (102,111 bp linear): Segment of H. defensa chromosome
+  contig_22 (140,021 bp linear): Segment of H. defensa chromosome
+  contig_23 (185,852 bp linear): Segment of H. defensa chromosome
+  contig_26 (133,581 bp linear): Segment of H. defensa chromosome
+  contig_27 (37,098 bp circular): APSE
+  contig_28 (113,721 bp linear): Segment of H. defensa chromosome
+  contig_29 (31,472 bp circular): H. defensa plasmid pH103_2
+  contig_31 (58,431 bp circular): H. defensa plasmid pH103_1
+  contig_01-04, 06-09, 12-20, 24, 25, 30 (20 contigs, 15,368-85,455 bp, all linear): Unplaced H. defensa contigs
+
+File = S08_APSE_v2.fasta
+  S08_APSE (37,098 bp circular): APSE bacteriophage (complete), lineage APSE-MAC-I
+
+File = S09_v2.fasta   (42 contigs, 1,749,103 bp)
+  contig_16 (127,268 bp linear): Segment of H. defensa chromosome
+  contig_19 (150,278 bp linear): Segment of H. defensa chromosome
+  contig_42 (31,405 bp circular): H. defensa plasmid pH131_1
+  contig_43 (36,922 bp circular): APSE
+  contig_01-15, 17, 18, 20-35, 37-41 (38 contigs, 10,782-76,489 bp, all linear): Unplaced H. defensa contigs
+
+File = S09_APSE_v2.fasta
+  S09_APSE (36,922 bp circular): APSE bacteriophage (complete), lineage APSE-Shiga-I
+
+File = S10_v2.fasta   (5 contigs, 2,222,138 bp)
+  contig_01 (2,042,160 bp linear): H. defensa chromosome
+  contig_04 (12,032 bp linear): Unplaced H. defensa contig
+  contig_07 (57,488 bp circular): H. defensa plasmid pH191_2
+  contig_08 (53,301 bp linear): Unplaced H. defensa contig
+  contig_10 (57,157 bp circular): H. defensa plasmid p191_1
+
+File = S10_APSE_v2.fasta
+  S10_APSE (34,095 bp linear): APSE bacteriophage (partial), lineage APSE-MAC-II
+
+File = S11_v2.fasta   (6 contigs, 2,231,478 bp)
+  contig_01 (2,960 bp linear): Fragment of an H. defensa plasmid that is complete in another sample
+  contig_02 (136,360 bp circular): H. defensa plasmid pH214_3
+  contig_03 (1,984,542 bp linear): H. defensa chromosome
+  contig_04 (28,430 bp linear): Fragment of an H. defensa plasmid that is complete in another sample
+  contig_05 (67,166 bp circular): H. defensa plasmid pH214_1
+  contig_06 (12,020 bp circular): H. defensa plasmid pH214_2
+
+File = S11_APSE_v2.fasta
+  S11_APSE (40,511 bp linear): APSE bacteriophage (complete), lineage APSE-RHS-III
+
+File = S12_v2.fasta   (4 contigs, 2,218,914 bp)
+  contig_01 (2,105,096 bp linear): H. defensa chromosome
+  contig_04 (26,045 bp circular): H. defensa plasmid pH244_1
+  contig_05 (56,390 bp circular): H. defensa plasmid pH244_2
+  contig_06 (31,383 bp circular): H. defensa plasmid pH244_3
+
+File = S12_APSE_v2.fasta
+  S12_APSE (36,171 bp circular): APSE bacteriophage (complete), lineage APSE-CdtB-III
+
+File = S13_v2.fasta   (2 contigs, 2,151,954 bp)
+  contig_01 (2,111,877 bp linear): H. defensa chromosome
+  contig_03 (40,077 bp circular): H. defensa plasmid pH402_1
+
+File = S13_APSE_v2.fasta
+  S13_APSE (35,455 bp circular): APSE bacteriophage (complete), lineage APSE-CdtB-I
+
+File = S14_v2.fasta   (8 contigs, 2,114,432 bp)
+  contig_01 (1,634,175 bp linear): Segment of H. defensa chromosome
+  contig_02 (19,800 bp linear): APSE
+  contig_03 (58,258 bp circular): H. defensa plasmid H619_2
+  contig_04 (57,327 bp linear): H. defensa plasmid (could not be circularized)
+  contig_05 (17,976 bp linear): Unplaced H. defensa contig
+  contig_06 (145,484 bp linear): Segment of H. defensa chromosome
+  contig_07 (123,912 bp linear): Segment of H. defensa chromosome
+  contig_08 (57,500 bp circular): H. defensa plasmid H619_1
+
+File = S14_APSE_v2.fasta
+  S14_APSE (19,800 bp linear): APSE bacteriophage (partial), lineage unresolved (MAC)
+

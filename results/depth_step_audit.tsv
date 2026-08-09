@@ -1,0 +1,131 @@
+sample	contig	length_bp	mean_depth	best_step_position	left_depth	right_depth	step_ratio	verdict
+S01	contig_03	68560	46.7	52000	43.8	56.6	1.29	flat
+S01	contig_06	82412	24.2	59000	22.2	28.3	1.28	flat
+S01	contig_07	31643	35.6	12000	44.4	32.5	1.36	flat
+S01	contig_08	78251	19.1	30000	23.8	16.5	1.44	flat
+S01	contig_09	49165	24.9	19000	19.4	28.0	1.45	flat
+S02	contig_01	164507	14.7	156000	15.2	7.1	2.15	possible fusion - inspect
+S02	contig_10	54237	14.1	41000	15.3	8.5	1.79	possible fusion - inspect
+S02	contig_12	27144	7.7	19000	9.6	2.5	3.78	possible fusion - inspect
+S02	contig_13	40864	168.4	15000	187.1	159.2	1.18	flat
+S02	contig_14	34751	13.1	19000	10.1	15.7	1.56	possible fusion - inspect
+S02	contig_02	17629	5.9	9000	10.5	5.2	2.01	possible fusion - inspect
+S02	contig_03	19806	9.8	11000	16.1	12.5	1.29	flat
+S02	contig_04	26121	9.4	16000	10.2	12.8	1.25	flat
+S02	contig_07	43999	9.9	7000	9.1	12.0	1.32	flat
+S02	contig_08	39268	9.2	7000	6.9	11.4	1.66	possible fusion - inspect
+S02	contig_09	23813	6.0	7000	4.8	9.0	1.86	possible fusion - inspect
+S03	contig_01	96454	6.8	60000	6.3	8.9	1.42	flat
+S03	contig_11	18871	4.7	7000	5.6	7.3	1.30	flat
+S03	contig_14	16656	4.2	7000	3.8	7.0	1.82	possible fusion - inspect
+S03	contig_17	64754	8.1	7000	3.6	9.3	2.57	possible fusion - inspect
+S03	contig_19	179609	7.0	29000	9.6	6.9	1.40	flat
+S03	contig_02	58777	8.1	7000	5.1	9.2	1.83	possible fusion - inspect
+S03	contig_20	61540	8.1	7000	4.9	9.3	1.91	possible fusion - inspect
+S03	contig_03	154738	6.8	44000	9.1	6.4	1.42	flat
+S03	contig_04	113231	7.0	98000	7.8	3.7	2.09	possible fusion - inspect
+S03	contig_05	47246	6.0	24000	8.4	5.0	1.67	possible fusion - inspect
+S03	contig_06	27685	8.4	16000	9.1	12.3	1.34	flat
+S03	contig_07	28630	8.4	7000	8.0	12.0	1.51	possible fusion - inspect
+S03	contig_08	40857	4.6	23000	3.6	5.3	1.49	flat
+S03	contig_09	14633	3.3	0	0.0	0.0	1.00	flat
+S04	contig_04	40077	38.3	17000	46.7	32.4	1.44	flat
+S05	contig_10	156002	11.2	7000	6.0	11.6	1.93	possible fusion - inspect
+S05	contig_19	73402	34.4	46000	34.1	42.7	1.25	flat
+S05	contig_07	54959	9.4	35000	12.5	5.2	2.38	possible fusion - inspect
+S05	contig_08	46796	58.7	7000	46.7	59.7	1.28	flat
+S05	contig_13	39266	11.1	10000	16.5	10.9	1.51	possible fusion - inspect
+S05	contig_21	35855	15.8	23000	19.4	13.1	1.48	flat
+S05	contig_20	31557	21.5	11000	17.9	22.6	1.27	flat
+S05	contig_06	16754	7.5	8000	11.5	9.6	1.20	flat
+S06	contig_04	78251	86.6	14000	78.6	87.9	1.12	flat
+S06	contig_05	68560	143.6	7000	122.1	146.0	1.20	flat
+S06	contig_07	49165	64.3	19000	53.2	69.8	1.31	flat
+S06	contig_08	82411	71.5	60000	69.9	93.1	1.33	flat
+S06	contig_09	31643	90.1	18000	95.0	88.7	1.07	flat
+S07	contig_07	75753	67.1	7000	62.0	72.4	1.17	flat
+S07	contig_08	31557	52.8	20000	53.2	39.8	1.34	flat
+S07	contig_09	35855	42.6	25000	42.5	32.1	1.32	flat
+S08	contig_01	85455	7.6	77000	8.4	1.0	8.30	possible fusion - inspect
+S08	contig_10	107973	5.8	75000	6.9	3.4	2.03	possible fusion - inspect
+S08	contig_11	102111	5.8	7000	2.9	6.3	2.18	possible fusion - inspect
+S08	contig_12	62699	5.3	54000	6.1	2.9	2.11	possible fusion - inspect
+S08	contig_13	70618	5.8	7000	2.5	6.7	2.70	possible fusion - inspect
+S08	contig_14	15368	5.3	7000	7.6	10.6	1.38	flat
+S08	contig_15	75104	5.5	67000	5.6	9.8	1.74	possible fusion - inspect
+S08	contig_16	63695	6.1	17000	9.5	5.9	1.63	possible fusion - inspect
+S08	contig_17	20641	7.0	10000	10.4	4.0	2.62	possible fusion - inspect
+S08	contig_18	76607	5.9	7000	2.3	6.7	2.84	possible fusion - inspect
+S08	contig_19	42007	6.6	29000	8.5	5.6	1.51	possible fusion - inspect
+S08	contig_02	38216	5.9	10000	5.3	6.7	1.27	flat
+S08	contig_20	18075	3.3	10000	5.4	4.6	1.17	flat
+S08	contig_22	140021	6.1	10000	1.7	6.6	3.82	possible fusion - inspect
+S08	contig_23	185852	6.2	7000	3.6	6.4	1.75	possible fusion - inspect
+S08	contig_24	55902	4.9	28000	6.3	4.5	1.39	flat
+S08	contig_25	71737	7.0	61000	7.8	3.6	2.21	possible fusion - inspect
+S08	contig_26	133581	7.5	92000	7.4	5.8	1.29	flat
+S08	contig_27	37098	174.5	15000	195.4	173.5	1.13	flat
+S08	contig_28	113721	6.0	78000	5.7	7.8	1.37	flat
+S08	contig_29	31472	8.9	23000	10.0	5.9	1.70	possible fusion - inspect
+S08	contig_03	24085	5.8	11000	9.1	4.8	1.88	possible fusion - inspect
+S08	contig_30	62427	4.8	11000	2.1	5.7	2.74	possible fusion - inspect
+S08	contig_31	58431	13.3	8000	10.3	14.5	1.40	flat
+S08	contig_04	53929	6.3	45000	7.3	4.8	1.53	possible fusion - inspect
+S08	contig_05	121076	6.5	100000	6.3	9.9	1.57	possible fusion - inspect
+S08	contig_06	24483	6.5	15000	8.6	4.6	1.86	possible fusion - inspect
+S08	contig_07	59248	6.6	7000	3.2	7.6	2.34	possible fusion - inspect
+S08	contig_08	73915	4.9	55000	5.7	4.2	1.35	flat
+S08	contig_09	34430	5.9	14000	3.5	9.2	2.61	possible fusion - inspect
+S09	contig_01	44915	3.6	36000	4.4	1.7	2.65	possible fusion - inspect
+S09	contig_11	43470	3.5	31000	3.8	4.7	1.25	flat
+S09	contig_12	25631	6.0	17000	6.1	7.7	1.26	flat
+S09	contig_13	38277	3.3	28000	4.7	1.5	3.04	possible fusion - inspect
+S09	contig_14	69711	6.5	7000	1.7	7.6	4.36	possible fusion - inspect
+S09	contig_15	56316	5.3	37000	4.5	7.8	1.74	possible fusion - inspect
+S09	contig_16	127268	3.5	119000	3.7	2.0	1.89	possible fusion - inspect
+S09	contig_17	43814	3.5	13000	2.8	4.1	1.42	flat
+S09	contig_18	57427	4.0	9000	5.9	4.1	1.44	flat
+S09	contig_19	150278	5.3	142000	5.5	2.7	2.02	possible fusion - inspect
+S09	contig_02	70465	3.5	53000	3.4	5.3	1.56	possible fusion - inspect
+S09	contig_20	55119	4.3	7000	2.7	4.9	1.86	possible fusion - inspect
+S09	contig_22	35435	5.2	25000	6.3	4.3	1.48	flat
+S09	contig_23	59973	4.7	7000	1.6	5.5	3.46	possible fusion - inspect
+S09	contig_24	52629	4.4	8000	1.8	5.0	2.74	possible fusion - inspect
+S09	contig_26	22166	3.4	9000	4.5	3.3	1.38	flat
+S09	contig_27	28086	3.9	7000	5.1	4.0	1.27	flat
+S09	contig_29	24845	4.0	7000	4.2	5.6	1.32	flat
+S09	contig_03	31314	3.7	22000	4.9	1.9	2.56	possible fusion - inspect
+S09	contig_30	14945	3.2	0	0.0	0.0	1.00	flat
+S09	contig_31	31409	4.5	23000	4.8	5.8	1.20	flat
+S09	contig_32	23104	3.2	9000	1.6	5.3	3.40	possible fusion - inspect
+S09	contig_33	58014	3.5	48000	3.4	4.8	1.40	flat
+S09	contig_34	22923	4.6	14000	4.5	5.7	1.29	flat
+S09	contig_37	33170	4.2	23000	4.1	7.4	1.80	possible fusion - inspect
+S09	contig_38	51578	5.5	39000	6.4	4.2	1.54	possible fusion - inspect
+S09	contig_39	30213	4.5	20000	5.8	3.8	1.53	possible fusion - inspect
+S09	contig_04	47019	4.0	16000	2.9	5.1	1.75	possible fusion - inspect
+S09	contig_40	76489	5.5	7000	3.8	5.9	1.55	possible fusion - inspect
+S09	contig_41	31515	4.8	18000	5.1	7.3	1.43	flat
+S09	contig_42	31405	6.6	7000	4.3	7.4	1.70	possible fusion - inspect
+S09	contig_43	36922	168.5	27000	170.8	157.0	1.09	flat
+S09	contig_05	24964	3.7	15000	5.6	4.6	1.23	flat
+S09	contig_06	56466	5.1	17000	7.1	4.8	1.47	flat
+S09	contig_07	21523	4.2	10000	5.0	4.1	1.22	flat
+S09	contig_08	49299	4.0	41000	4.8	2.1	2.29	possible fusion - inspect
+S10	contig_10	57157	22.3	11000	33.0	21.1	1.56	possible fusion - inspect
+S10	contig_07	57488	31.9	43000	33.9	25.1	1.35	flat
+S10	contig_08	53301	27.2	18000	33.5	25.6	1.31	flat
+S11	contig_02	136360	95.7	125000	96.2	87.1	1.11	flat
+S11	contig_04	28430	187.4	11000	203.9	169.3	1.20	flat
+S11	contig_05	67166	49.8	7000	41.7	52.0	1.25	flat
+S12	contig_04	26045	318.1	16000	307.4	347.7	1.13	flat
+S12	contig_05	56390	117.9	48000	128.3	107.7	1.19	flat
+S12	contig_06	31383	76.3	7000	84.1	70.0	1.20	flat
+S13	contig_03	40077	15.4	32000	14.6	16.9	1.16	flat
+S14	contig_02	19800	13.4	7000	14.0	19.6	1.40	flat
+S14	contig_03	58258	24.2	50000	26.4	13.7	1.92	possible fusion - inspect
+S14	contig_04	57327	38.6	49000	41.0	30.1	1.36	flat
+S14	contig_05	17976	9.9	7000	16.4	18.8	1.15	flat
+S14	contig_06	145484	17.7	33000	15.3	18.3	1.20	flat
+S14	contig_07	123912	15.4	29000	20.1	14.8	1.36	flat
+S14	contig_08	57500	38.7	9000	47.2	39.3	1.20	flat

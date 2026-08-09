@@ -1,0 +1,45 @@
+# Windows alternate-data-stream markers, created when files pass through
+# Dropbox or a Windows filesystem. They carry no information.
+*Zone.Identifier
+
+# The PGAP annotation logs are ~32 MB each and are a record of a run rather than
+# a result. The annotations themselves are kept.
+docs/files_from_giacomo/PGAP_*/cwltool.log
+
+# Index files, which any tool regenerates in a second from the FASTA beside them.
+*.fai
+*.bai
+*.csi
+
+# Alignments and read files are far too large to distribute and are not part of
+# the deliverable. See data/config.sh for where they are expected to live.
+*.bam
+*.sam
+*.fq
+*.fastq
+*.fq.gz
+*.fastq.gz
+
+# Credentials. Nothing that authenticates anything belongs in a repository that
+# is going to be shared with a client, and a private repository is not a safe
+# place for a key either -- anyone invited to it gets the key too. These patterns
+# are deliberately broad.
+secrets/
+*.pem
+*.key
+*.p12
+id_rsa*
+.env
+
+# Backups written by scripts/apply_replicon_labels.py before it rewrites a
+# header. They are a safety net for the person running the script, not part of
+# the delivery, and they duplicate every assembly at full size.
+*.pre_relabel
+
+# Scratch
+tmp*
+*.tmp
+
+# Working files written by scripts/lib/classify_replicons.py while it runs. They
+# are regenerated on every run and are not results.
+results/.replicon_work/

@@ -1,0 +1,38 @@
+sample: S08
+reads: /mnt/d/aphid/reads_filtered/S08.fq
+assembly: /mnt/c/Users/ericd/Dropbox/Eric Work/DPA/APHIDS/data/S08/S08.raw.fasta
+minimap2: 2.31-r1302
+samtools: samtools 1.24
+thresholds: depth>=10 alt>=3 maf>=0.15 mapq>=20
+[M::mm_idx_gen::0.097*0.60] collected minimizers
+[M::mm_idx_gen::0.111*1.17] sorted minimizers
+[M::main::0.111*1.17] loaded/built the index for 31 target sequence(s)
+[M::mm_mapopt_update::0.114*1.16] mid_occ = 50
+[M::mm_idx_stat] kmer size: 19; skip: 19; is_hpc: 0; #seq: 31
+[M::mm_idx_stat::0.117*1.16] distinct minimizers: 191915 (94.41% are singletons); average occurrences: 1.078; average spacing: 10.015; total length: 2071098
+[M::worker_pipeline::0.123*1.17] mapped 4 sequences
+[M::main] Version: 2.31-r1302
+[M::main] CMD: minimap2 -x asm10 -t 8 /mnt/c/Users/ericd/Dropbox/Eric Work/DPA/APHIDS/data/S08/S08.raw.fasta data/reference/APSE_panel.fasta
+[M::main] Real time: 0.128 sec; CPU: 0.146 sec; Peak RSS: 0.017 GB
+[M::mm_idx_gen::0.105*0.58] collected minimizers
+[M::mm_idx_gen::0.124*1.24] sorted minimizers
+[M::main::0.124*1.24] loaded/built the index for 31 target sequence(s)
+[M::mm_mapopt_update::0.130*1.22] mid_occ = 50
+[M::mm_idx_stat] kmer size: 19; skip: 10; is_hpc: 0; #seq: 31
+[M::mm_idx_stat::0.135*1.22] distinct minimizers: 348549 (94.30% are singletons); average occurrences: 1.080; average spacing: 5.502; total length: 2071098
+[M::worker_pipeline::0.136*1.22] mapped 15 sequences
+[M::main] Version: 2.31-r1302
+[M::main] CMD: minimap2 -x asm20 -t 8 /mnt/c/Users/ericd/Dropbox/Eric Work/DPA/APHIDS/data/S08/S08.raw.fasta data/reference/toxins_CDS.fasta
+[M::main] Real time: 0.142 sec; CPU: 0.169 sec; Peak RSS: 0.024 GB
+[M::mm_idx_gen::0.002*1.37] collected minimizers
+[M::mm_idx_gen::0.003*1.54] sorted minimizers
+[M::main::0.003*1.54] loaded/built the index for 15 target sequence(s)
+[M::mm_mapopt_update::0.003*1.52] mid_occ = 50
+[M::mm_idx_stat] kmer size: 19; skip: 19; is_hpc: 0; #seq: 15
+[M::mm_idx_stat::0.003*1.50] distinct minimizers: 1926 (57.27% are singletons); average occurrences: 1.735; average spacing: 10.082; total length: 33693
+[M::worker_pipeline::0.702*1.45] mapped 2638 sequences
+[M::main] Version: 2.31-r1302
+[M::main] CMD: minimap2 -ax map-hifi -t 8 data/reference/toxins_CDS.fasta /mnt/d/aphid/reads_filtered/S08.fq
+[M::main] Real time: 0.704 sec; CPU: 1.020 sec; Peak RSS: 0.047 GB
+[bam_sort_core] merging from 0 files and 2 in-memory blocks...
+[mpileup] 1 samples in 1 input files

@@ -1,0 +1,4 @@
+## gff-version 3
+pgaptmp_000011	SignalP-6.0	lipoprotein_signal_peptide	1	13	0.99999756	.	.	.
+pgaptmp_000016	SignalP-6.0	signal_peptide	1	32	0.9949067	.	.	.
+pgaptmp_000017	SignalP-6.0	signal_peptide	1	33	0.9706581	.	.	.

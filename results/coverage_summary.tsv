@@ -1,0 +1,15 @@
+sample	chromosome_depth	prophage_depth	prophage_ratio	plasmid_depth_range	prophage_bp
+S01	32.4	1312.8	40.6	see coverage_by_contig.tsv	39093
+S02	15.3	168.4	11.0	see coverage_by_contig.tsv	40864
+S03	7.9	378.7	47.8	see coverage_by_contig.tsv	35518
+S04	63.0	2161.8	34.3	see coverage_by_contig.tsv	35456
+S05	14.8	576.6	39.0	see coverage_by_contig.tsv	78333
+S06	97.0	213.0	2.2	see coverage_by_contig.tsv	39094
+S07	38.4	1785.2	46.5	see coverage_by_contig.tsv	73467
+S08	6.5	174.5	26.7	see coverage_by_contig.tsv	37098
+S09	4.5	168.5	37.3	see coverage_by_contig.tsv	36922
+S10	15.3	19.1	1.2	see coverage_by_contig.tsv	34096
+S11	52.7	51.0	1.0	see coverage_by_contig.tsv	40512
+S12	63.5	1922.1	30.3	see coverage_by_contig.tsv	36172
+S13	22.0	1445.1	65.6	see coverage_by_contig.tsv	35456
+S14	19.2	13.4	0.7	see coverage_by_contig.tsv	19800

@@ -1,0 +1,20 @@
+# Topology established by mapping reads, where the assembler's own call is wrong.
+#
+# FLYE's circ. column describes its assembly graph, not the molecule, and in this
+# panel it is wrong in both directions. Where a contig has been tested directly --
+# by rotating the sequence so its two ends meet in the middle and counting reads
+# that span that join -- the result is recorded here and overrides the assembler.
+#
+# A read counts as spanning only if it extends at least 150 bp either side of the
+# join. Five such reads is treated as the minimum for calling a circle; the
+# entries below are far above that or at zero.
+#
+# This file is deliberately small and hand-curated. Every row is a claim that
+# something was measured, so every row carries its evidence.
+#
+# sample  contig      topology   spanning_reads  note
+S11	contig_02	circular	57	circular cointegrate: two plasmids that assemble as separate circles in S01 and S06 are fused into one molecule here; the internal junction at ~78,178 carries 107 spanning reads and no depth step, and FLYE called this contig circ=N
+S11	contig_04	linear	0	does not close; a fragment of the plasmid that closes in S01 and S06
+S11	contig_01	linear	0	does not close; a fragment of the plasmid that closes in S01 and S06
+S10	contig_10	circular	18	closes into a circle: 18 reads span the join when the sequence is rotated, against 41 for contig_07 which FLYE did call circular. FLYE reported circ=N and was wrong; the 2024 curation called it circular and was right
+S14	contig_04	linear	0	does not close; only 4 reads reach the join at 38.6X mean depth, the coverage collapse at both ends that a genuine linear terminus produces

@@ -1,0 +1,7 @@
+## gff-version 3
+pgaptmp_000022	SignalP-6.0	n-region	1	15	.	.	.	.
+pgaptmp_000022	SignalP-6.0	h-region	16	27	.	.	.	.
+pgaptmp_000022	SignalP-6.0	c-region	28	32	.	.	.	.
+pgaptmp_000023	SignalP-6.0	n-region	1	13	.	.	.	.
+pgaptmp_000023	SignalP-6.0	h-region	14	30	.	.	.	.
+pgaptmp_000023	SignalP-6.0	c-region	31	33	.	.	.	.

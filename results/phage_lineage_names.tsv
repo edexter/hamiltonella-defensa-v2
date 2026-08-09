@@ -1,0 +1,49 @@
+# Candidate lineage names for every APSE genome in the panel.
+#
+# Lineages were defined by single-linkage clustering on 31-mer containment at a
+# 0.95 threshold. The data separate cleanly: within a group containment is
+# 0.98-1.00, between groups 0.55-0.75, with almost nothing in between.
+#
+# Naming is APSE-<toxin>-<numeral>. The toxin is kept because it is the useful
+# biological label; the numeral is what prevents the name implying that two
+# phages sharing a toxin are the same lineage. They frequently are not: this
+# panel contains three distinct CdtB lineages and two distinct RHS lineages,
+# and the published APSE-1 carries the same Shiga-like toxin as S09 while
+# sharing only 62 % of its 31-mers with it.
+#
+# CORRECTION 2026-08-03: S08 and S10 were initially grouped together as MAC-I.
+# That was an artefact of S10's sequence being partial. With S10 rebuilt to
+# 34,095 bp, containment between S08 and S10 is only 0.550 -- they are DIFFERENT
+# lineages. S14's 19,800 bp fragment lies in sequence the two share (0.979 to
+# S08, 0.998 to S10) and cannot be assigned to either. A partial genome cannot
+# be assigned to a lineage when the candidates share a backbone.
+#
+# Integrase type is recorded but deliberately NOT part of the name: 16 of the 18
+# genomes examined carry type A (99.1-100 % identity), and only the CdtB-II
+# lineage carries type B. A character that is invariant across nine tenths of the
+# panel adds nothing to a name, and putting it there would imply it defines
+# lineages when it does not. It matters for a different reason -- it determines
+# the att core and therefore which chromosomal site the phage occupies.
+#
+# status: confirmed  = complete genome, unambiguous group membership
+#         partial    = only part of the phage recovered; grouping is supported
+#                      but rests on less sequence
+#         unresolved = too little sequence recovered to assign
+sample	lineage	toxin	integrase	source	status
+S01	APSE-RHS-I	RHS	A	excised from chromosome	confirmed
+S02	APSE-LeucineRich-I	LeucineRich	A	standalone contig	confirmed, circular (96 spanning reads)
+S03	APSE-CdtB-I	CdtB	A	standalone contig	confirmed, circular (217 spanning reads)
+S04	APSE-CdtB-I	CdtB	A	excised from chromosome	confirmed
+S05	APSE-RHS-II	RHS	A	v2 reconstruction	confirmed
+S05	APSE-CdtB-II	CdtB	B	v2 reconstruction	confirmed
+S05	APSE-CdtB-II x RHS-II (hapA)	CdtB	A	v2 reconstruction	confirmed, recombinant
+S06	APSE-RHS-I	RHS	A	excised from chromosome	confirmed
+S07	APSE-RHS-II	RHS	A	v2 reconstruction	confirmed
+S07	APSE-CdtB-II	CdtB	B	v2 reconstruction	confirmed
+S08	APSE-MAC-I	MAC	A	standalone contig	confirmed, circular (110 spanning reads)
+S09	APSE-Shiga-I	Shiga	A	standalone contig	confirmed, circular (96 spanning reads)
+S10	APSE-MAC-II	MAC	A	rebuilt de novo from reads	draft - 10x coverage, trimmed to 34,095 bp
+S11	APSE-RHS-III	RHS	A	excised from chromosome	confirmed
+S12	APSE-CdtB-III	CdtB	A	excised from chromosome	confirmed
+S13	APSE-CdtB-I	CdtB	A	excised from chromosome	confirmed
+S14	unresolved (MAC)	MAC	A	standalone contig	unresolved - 19,800 bp fragment lies in sequence shared by MAC-I and MAC-II

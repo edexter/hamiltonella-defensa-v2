@@ -1,0 +1,13 @@
+sample	join_position	left_piece	right_piece	spanning_reads_150bp	spanning_reads_1kb	verdict
+S01	contig_01:543595	contig_1	contig_4	1279	995	supported
+S01	contig_01:572532	contig_4	contig_2	1314	1022	supported
+S03	contig_21:138256	contig_21	contig_22	10	5	weakly supported
+S04	contig_01:1924722	contig_2	contig_3	1978	1520	supported
+S04	contig_01:1949362	contig_3	contig_1	2091	1686	supported
+S05	contig_11:805751	contig_11	contig_5	5	0	UNSUPPORTED - inspect
+S06	contig_01:1400157	contig_1	contig_6	225	181	supported
+S06	contig_01:1427893	contig_6	contig_2	180	146	supported
+S12	contig_01:1096576	contig_1	contig_3	1853	1515	supported
+S12	contig_01:1123333	contig_3	contig_2	1959	1565	supported
+S13	contig_01:1922930	contig_1	contig_4	1356	1122	supported
+S13	contig_01:1949815	contig_4	contig_2	1466	1227	supported

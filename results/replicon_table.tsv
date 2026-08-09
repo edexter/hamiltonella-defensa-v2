@@ -1,0 +1,160 @@
+sample	contig	length_bp	flye_coverage	circular	coverage_ratio_to_chromosome	best_taxonomic_match	pct_of_contig_covered	samples_sharing_it	plasmid_family	label	evidence
+S01	contig_01	1968083				HDEF_CHROM	83.8	S06	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S01	contig_06	82412	25	Y		HDEF_CHROM	32.8	S06	P02	plasmid	assembled as a closed circle; family P02
+S01	contig_08	78251	18	Y		HDEF_PLASMID	56.1	S06	P03	plasmid	assembled as a closed circle; family P03
+S01	contig_03	68560	48	Y		HDEF_CHROM	14.3	S11	P05	plasmid	assembled as a closed circle; family P05
+S01	contig_09	49165	26	Y		HDEF_CHROM	26.5	S06	P09	plasmid	assembled as a closed circle; family P09
+S01	contig_07	31643	34	Y		HDEF_CHROM	14.4	S07	P13	plasmid	assembled as a closed circle; family P13
+S01	contig_05	12032	33	Y		HDEF_CHROM	66.0	S11	P16	plasmid	assembled as a closed circle; family P16
+S02	contig_11	1150584	16	N	1.00	HDEF_CHROM	91.7	-	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S02	contig_05	366167	17	N	1.06	HDEF_CHROM	72.8	-	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S02	contig_01	164507	15	N	0.94	HDEF_CHROM	83.4	-	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S02	contig_10	54237	14	Y	0.88	HDEF_PLASMID	91.1	-	P08	plasmid	assembled as a closed circle; family P08
+S02	contig_07	43999	11	N	0.69	HDEF_CHROM	88.7	-	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S02	contig_13	40864	170	N	10.62	APSE	100.0	S07	-	APSE phage	aligns to a reconstructed APSE genome
+S02	contig_08	39268	9	N	0.56	HDEF_CHROM	97.8	S07	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S02	contig_14	34751	14	Y	0.88	HDEF_CHROM	97.0	S07	P12	plasmid	assembled as a closed circle; family P12
+S02	contig_12	27144	8	N	0.50	HDEF_CHROM	88.2	S10	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S02	contig_04	26121	10	N	0.62	HDEF_CHROM	76.7	-	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S02	contig_09	23813	6	N	0.38	HDEF_CHROM	96.9	S14	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S02	contig_03	19806	9	N	0.56	HDEF_CHROM	97.6	-	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S02	contig_02	17629	6	N	0.38	HDEF_CHROM	100.0	S07	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S03	contig_16	534713	9	N	1.00	HDEF_CHROM	98.6	S04	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S03	contig_18	259100	8	N	0.89	HDEF_CHROM	100.0	S13	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S03	contig_21	223302				HDEF_CHROM	73.3	S13	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S03	contig_19	179609	7	N	0.78	HDEF_CHROM	67.3	S04	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S03	contig_03	154738	7	N	0.78	HDEF_CHROM	81.5	S04	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S03	contig_04	113231	8	N	0.89	HDEF_CHROM	100.0	S04	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S03	contig_01	96454	7	N	0.78	HDEF_CHROM	84.7	S04	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S03	contig_17	64754	9	N	1.00	HDEF_CHROM	100.0	S13	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S03	contig_20	61540	8	N	0.89	HDEF_CHROM	97.8	S13	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S03	contig_02	58777	8	N	0.89	HDEF_CHROM	72.3	S04	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S03	contig_05	47246	6	N	0.67	HDEF_CHROM	100.0	S04	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S03	contig_08	40857	5	N	0.56	HDEF_PLASMID	53.8	S13	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S03	contig_07	28630	9	N	1.00	HDEF_CHROM	100.0	S13	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S03	contig_06	27685	9	N	1.00	HDEF_CHROM	99.5	S13	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S03	contig_11	18871	5	N	0.56	HDEF_CHROM	99.5	S04	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S03	contig_14	16656	3	N	0.33	HDEF_CHROM	100.0	S13	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S03	contig_09	14633	3	N	0.33	HDEF_CHROM	100.0	S13	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S04	contig_01	2111329				HDEF_CHROM	87.6	S13	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S04	contig_04	40077	39	Y		HDEF_PLASMID	54.9	S09,S13	P11	plasmid	assembled as a closed circle; family P11
+S05	contig_11	850481				HDEF_CHROM	94.6	S07	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S05	contig_01	428393	12	N		HDEF_CHROM	91.3	S07	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S05	contig_09	272758	14	N		HDEF_CHROM	93.8	S12	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S05	contig_02	249175				HDEF_CHROM	59.8	S07	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S05	contig_10	156002	10	N		HDEF_CHROM	76.3	S07	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S05	contig_19	73402	35	Y		HDEF_CHROM	60.1	S07	P04	plasmid	assembled as a closed circle; family P04
+S05	contig_07	54959	10	N		HDEF_CHROM	82.9	S07	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S05	contig_08	46796	58	Y		HDEF_CHROM	90.8	S07	P10	plasmid	assembled as a closed circle; family P10
+S05	contig_13	39266	12	N		HDEF_CHROM	90.4	S07	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S05	contig_21	35855	16	Y		HDEF_CHROM	98.5	S07,S09	P12	plasmid	assembled as a closed circle; family P12
+S05	contig_20	31557	22	Y		HDEF_CHROM	14.1	S06	P13	plasmid	assembled as a closed circle; family P13
+S05	contig_06	16754	9	N		HDEF_CHROM	100.0	S07	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S06	contig_01	1972121				HDEF_CHROM	83.9	S01	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S06	contig_08	82411	73	Y		HDEF_CHROM	34.5	S01	P02	plasmid	assembled as a closed circle; family P02
+S06	contig_04	78251	89	Y		HDEF_PLASMID	53.1	S11	P03	plasmid	assembled as a closed circle; family P03
+S06	contig_05	68560	143	Y		HDEF_CHROM	14.3	S01	P05	plasmid	assembled as a closed circle; family P05
+S06	contig_07	49165	67	Y		HDEF_CHROM	26.5	S01	P09	plasmid	assembled as a closed circle; family P09
+S06	contig_09	31643	90	Y		HDEF_CHROM	14.4	S01,S05	P13	plasmid	assembled as a closed circle; family P13
+S06	contig_03	12010	89	Y		HDEF_CHROM	65.4	S11	P16	plasmid	assembled as a closed circle; family P16
+S07	contig_02	2144657				HDEF_CHROM	88.9	S05	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S07	contig_07	75753	72	Y		HDEF_CHROM	55.4	S05	P04	plasmid	assembled as a closed circle; family P04
+S07	contig_09	35855	43	Y		HDEF_CHROM	98.3	S10	P12	plasmid	assembled as a closed circle; family P12
+S07	contig_08	31557	55	Y		HDEF_CHROM	14.1	S01	P13	plasmid	assembled as a closed circle; family P13
+S08	contig_23	185852	6	N	1.00	HDEF_CHROM	97.1	S12	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_22	140021	6	N	1.00	HDEF_CHROM	100.0	S05	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_26	133581	7	N	1.17	HDEF_CHROM	94.6	S12	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_05	121076	6	N	1.00	HDEF_CHROM	100.0	S05	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_28	113721	6	N	1.00	HDEF_CHROM	93.7	S07	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_10	107973	6	N	1.00	HDEF_CHROM	86.6	S12	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_11	102111	6	N	1.00	HDEF_CHROM	100.0	S05	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_01	85455	8	N	1.33	HDEF_CHROM	39.7	-	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_18	76607	5	N	0.83	HDEF_CHROM	99.9	S05	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_15	75104	5	N	0.83	HDEF_CHROM	98.8	S12	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_08	73915	5	N	0.83	HDEF_CHROM	94.3	-	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_25	71737	7	N	1.17	HDEF_CHROM	98.4	S12	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_13	70618	6	N	1.00	HDEF_CHROM	99.0	S07	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_16	63695	6	N	1.00	HDEF_CHROM	90.9	S05	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_12	62699	5	N	0.83	HDEF_CHROM	99.5	S07	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_30	62427	5	N	0.83	HDEF_CHROM	99.5	S12	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_07	59248	6	N	1.00	HDEF_CHROM	100.0	S12	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_31	58431	14	Y	2.33	HDEF_CHROM	59.4	S07	P04	plasmid	assembled as a closed circle; family P04
+S08	contig_24	55902	5	N	0.83	HDEF_CHROM	100.0	S07,S09	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_04	53929	6	N	1.00	HDEF_CHROM	93.3	S05	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_19	42007	7	N	1.17	HDEF_CHROM	100.0	S07	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_02	38216	6	N	1.00	HDEF_CHROM	100.0	S12	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_27	37098	177	N	29.50	APSE	100.0	-	-	APSE phage	aligns to a reconstructed APSE genome
+S08	contig_09	34430	6	N	1.00	HDEF_CHROM	100.0	S09	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_29	31472	10	Y	1.67	HDEF_PLASMID	100.0	S09	P11	plasmid	assembled as a closed circle; family P11
+S08	contig_06	24483	7	N	1.17	HDEF_CHROM	100.0	S07	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_03	24085	6	N	1.00	HDEF_CHROM	100.0	S12	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_17	20641	6	N	1.00	HDEF_CHROM	88.8	S12	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_20	18075	4	N	0.67	HDEF_CHROM	100.0	S07	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S08	contig_14	15368	4	N	0.67	HDEF_PLASMID	69.9	S12	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_19	150278	5	N	1.00	HDEF_CHROM	100.0	S05	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_16	127268	4	N	0.80	HDEF_CHROM	96.0	S07	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_40	76489	5	N	1.00	HDEF_CHROM	100.0	-	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_02	70465	3	N	0.60	HDEF_CHROM	100.0	S08	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_14	69711	7	N	1.40	HDEF_CHROM	25.9	-	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_23	59973	5	N	1.00	HDEF_CHROM	100.0	S05	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_33	58014	3	N	0.60	HDEF_CHROM	100.0	S12	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_18	57427	4	N	0.80	HDEF_CHROM	100.0	S05	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_06	56466	6	N	1.20	HDEF_CHROM	99.4	S08,S13	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_15	56316	5	N	1.00	HDEF_CHROM	98.4	S07	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_20	55119	4	N	0.80	HDEF_CHROM	65.4	-	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_24	52629	4	N	0.80	HDEF_CHROM	100.0	S12	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_38	51578	5	N	1.00	HDEF_CHROM	100.0	S12	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_08	49299	4	N	0.80	HDEF_CHROM	100.0	S12	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_04	47019	4	N	0.80	HDEF_CHROM	100.0	S12	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_01	44915	4	N	0.80	HDEF_CHROM	86.2	-	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_17	43814	3	N	0.60	HDEF_CHROM	96.8	S12	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_11	43470	4	N	0.80	HDEF_CHROM	35.4	-	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_13	38277	3	N	0.60	HDEF_CHROM	66.0	S08	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_43	36922	169	Y	33.80	APSE	100.0	S08	-	APSE phage	aligns to a reconstructed APSE genome
+S09	contig_22	35435	5	N	1.00	HDEF_CHROM	100.0	S08	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_37	33170	4	N	0.80	HDEF_CHROM	98.9	S12	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_41	31515	5	N	1.00	HDEF_CHROM	24.8	S07	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_31	31409	5	N	1.00	HDEF_CHROM	100.0	S05	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_42	31405	7	Y	1.40	HDEF_PLASMID	100.0	S12	P11	plasmid	assembled as a closed circle; family P11
+S09	contig_03	31314	4	N	0.80	HDEF_CHROM	52.8	S12	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_39	30213	4	N	0.80	HDEF_CHROM	100.0	S08	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_27	28086	4	N	0.80	HDEF_CHROM	96.1	S07	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_12	25631	6	N	1.20	HDEF_PLASMID	80.5	-	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_05	24964	5	N	1.00	HDEF_CHROM	100.0	S05	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_29	24845	5	N	1.00	HDEF_CHROM	100.0	S12	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_32	23104	3	N	0.60	HDEF_CHROM	100.0	S08	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_34	22923	5	N	1.00	HDEF_CHROM	93.0	S08	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_26	22166	3	N	0.60	HDEF_CHROM	100.0	S05	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_07	21523	4	N	0.80	HDEF_CHROM	90.8	-	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_30	14945	3	N	0.60	HDEF_CHROM	98.7	S05,S07	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_09	13357	5	N	1.00	HDEF_PLASMID	98.9	S02	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_21	12795	3	N	0.60	HDEF_CHROM	100.0	S05	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_25	11595	4	N	0.80	HDEF_CHROM	100.0	S12	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_35	11332	4	N	0.80	HDEF_CHROM	100.0	S08	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_28	11145	3	N	0.60	HDEF_CHROM	91.8	S05	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S09	contig_10	10782	4	N	0.80	HDEF_PLASMID	57.6	-	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S10	contig_01	2042160				HDEF_CHROM	94.1	S14	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S10	contig_07	57488	32	Y		HDEF_CHROM	64.0	S14	P04	plasmid	assembled as a closed circle; family P04
+S10	contig_10	57157	22	Y		HDEF_CHROM	68.4	S14	P06	plasmid	assembled as a closed circle; family P06
+S10	contig_08	53301	27	N		HDEF_CHROM	6.0	S14	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S10	contig_04	12032	17	N		HDEF_CHROM	98.8	S14	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
+S11	contig_03	1984542	48	N	1.00	HDEF_CHROM	83.2	-	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S11	contig_02	136360	95	Y	1.98	HDEF_PLASMID	36.4	S06	P01	plasmid	assembled as a closed circle; family P01
+S11	contig_05	67166	51	Y	1.06	HDEF_CHROM	15.5	S01	P05	plasmid	assembled as a closed circle; family P05
+S11	contig_04	28430	190	N	3.96	HDEF_PLASMID	10.4	S06	P14	plasmid fragment	not circular, and 86% of it is contained in S01|contig_06, which is circular
+S11	contig_06	12020	37	Y	0.77	HDEF_CHROM	63.5	S01	P16	plasmid	assembled as a closed circle; family P16
+S11	contig_01	2960	111	N	2.31	NONE	0.0	S06	P17	plasmid fragment	not circular, and 100% of it is contained in S01|contig_06, which is circular
+S12	contig_01	2105096				HDEF_CHROM	91.7	S05	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S12	contig_05	56390	125	Y		HDEF_CHROM	63.9	S14	P04	plasmid	assembled as a closed circle; family P04
+S12	contig_06	31383	77	Y		HDEF_PLASMID	100.0	S09	P11	plasmid	assembled as a closed circle; family P11
+S12	contig_04	26045	311	Y		HDEF_PLASMID	100.0	S07	P15	plasmid	assembled as a closed circle; family P15
+S13	contig_01	2111877				HDEF_CHROM	87.6	S04	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S13	contig_03	40077	16	Y		HDEF_PLASMID	54.9	S03	P11	plasmid	assembled as a closed circle; family P11
+S14	contig_01	1634175	17	N	1.00	HDEF_CHROM	95.0	S10	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S14	contig_06	145484	18	N	1.06	HDEF_CHROM	96.2	S10	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S14	contig_07	123912	16	N	0.94	HDEF_CHROM	87.6	S10	-	chromosome	H. defensa sequence; placement unchanged from the 2024 curation
+S14	contig_03	58258	24	Y	1.41	HDEF_CHROM	72.1	S10	P06	plasmid	assembled as a closed circle; family P06
+S14	contig_08	57500	39	Y	2.29	HDEF_CHROM	64.7	S10	P04	plasmid	assembled as a closed circle; family P04
+S14	contig_04	57327	40	N	2.35	HDEF_CHROM	9.6	S10	P07	plasmid, not circularised	groups with plasmid family P07, but the assembler did not close it into a circle
+S14	contig_02	19800	14	N	0.82	APSE	100.0	S10	-	APSE phage	aligns to a reconstructed APSE genome
+S14	contig_05	17976	8	N	0.47	HDEF_CHROM	100.0	S10	-	unplaced	H. defensa sequence; placement unchanged from the 2024 curation
