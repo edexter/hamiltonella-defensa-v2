@@ -11,3 +11,6 @@ S12	contig_01:1096576	contig_1	contig_3	1853	1515	supported
 S12	contig_01:1123333	contig_3	contig_2	1959	1565	supported
 S13	contig_01:1922930	contig_1	contig_4	1356	1122	supported
 S13	contig_01:1949815	contig_4	contig_2	1466	1227	supported
+S07	contig_02:2035594	contig_2	contig_5	27	25	supported
+S10	contig_01:1578834	contig_5	contig_6	16	8	weakly supported
+S10	contig_01:1773015	contig_6	contig_2	17	14	supported

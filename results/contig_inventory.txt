@@ -117,8 +117,8 @@ File = S09_v2.fasta   (42 contigs, 1,749,103 bp)
 File = S09_APSE_v2.fasta
   S09_APSE (36,922 bp circular): APSE bacteriophage (complete), lineage APSE-Shiga-I
 
-File = S10_v2.fasta   (5 contigs, 2,222,138 bp)
-  contig_01 (2,042,160 bp linear): H. defensa chromosome
+File = S10_v2.fasta   (5 contigs, 2,228,424 bp)
+  contig_01 (2,048,446 bp linear): H. defensa chromosome
   contig_04 (12,032 bp linear): Unplaced H. defensa contig
   contig_07 (57,488 bp circular): H. defensa plasmid pH191_2
   contig_08 (53,301 bp linear): Unplaced H. defensa contig

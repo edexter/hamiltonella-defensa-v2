@@ -94,7 +94,14 @@ printf "sample\tcontig\tlength_bp\tmean_depth\tbest_step_position\tleft_depth\tr
 for SAMPLE in "${SAMPLES[@]}"; do
 	ASSEMBLY="assemblies_v2/${SAMPLE}_v2.fasta"
 	READS="${READS_DIR}/${SAMPLE}.fq"
+	# The pre-curation assembly. Four samples name this file "assembly.fasta"
+	# rather than "<sample>.raw.fasta", and an earlier version of this script
+	# looked only for the latter -- so S07, S09, S10 and S14 were skipped in
+	# silence and reported as having no scaffold joins to check. Both names are
+	# now tried, and a sample with neither is reported rather than passed over.
 	RAW="${ASSEMBLY_DIR}/${SAMPLE}/${SAMPLE}.raw.fasta"
+	[ -s "$RAW" ] || RAW="${ASSEMBLY_DIR}/${SAMPLE}/assembly.fasta"
+	[ -s "$RAW" ] || echo "  $SAMPLE: no pre-curation assembly found, scaffold joins NOT checked" >&2
 	[ -s "$ASSEMBLY" ] && [ -s "$READS" ] || { echo "  $SAMPLE: inputs missing, skipping" >&2; continue; }
 
 	echo "  $SAMPLE: mapping reads"
