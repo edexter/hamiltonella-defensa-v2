@@ -1,0 +1,14 @@
+/scicore/home/ebertd/dexter0000/aphid/data_round2/fastx/m64141e_240627_145720.hifi_reads.bc2177--bc2177.hifi_reads.fastq.gz
+/scicore/home/ebertd/dexter0000/aphid/data_round2/fastx/m64141e_240627_145720.hifi_reads.bc2178--bc2178.hifi_reads.fastq.gz
+/scicore/home/ebertd/dexter0000/aphid/data_round2/fastx/m64141e_240627_145720.hifi_reads.bc2179--bc2179.hifi_reads.fastq.gz
+/scicore/home/ebertd/dexter0000/aphid/data_round2/fastx/m64141e_240627_145720.hifi_reads.bc2180--bc2180.hifi_reads.fastq.gz
+/scicore/home/ebertd/dexter0000/aphid/data_round2/fastx/m64141e_240627_145720.hifi_reads.bc2181--bc2181.hifi_reads.fastq.gz
+/scicore/home/ebertd/dexter0000/aphid/data_round2/fastx/m64141e_240627_145720.hifi_reads.bc2182--bc2182.hifi_reads.fastq.gz
+/scicore/home/ebertd/dexter0000/aphid/data_round2/fastx/m64141e_240627_145720.hifi_reads.bc2183--bc2183.hifi_reads.fastq.gz
+/scicore/home/ebertd/dexter0000/aphid/data_round2/fastx/m64141e_240627_145720.hifi_reads.bc2184--bc2184.hifi_reads.fastq.gz
+/scicore/home/ebertd/dexter0000/aphid/data_round2/fastx/m64141e_240627_145720.hifi_reads.bc2185--bc2185.hifi_reads.fastq.gz
+/scicore/home/ebertd/dexter0000/aphid/data_round2/fastx/m64141e_240627_145720.hifi_reads.bc2186--bc2186.hifi_reads.fastq.gz
+/scicore/home/ebertd/dexter0000/aphid/data_round2/fastx/m64141e_240627_145720.hifi_reads.bc2187--bc2187.hifi_reads.fastq.gz
+/scicore/home/ebertd/dexter0000/aphid/data_round2/fastx/m64141e_240627_145720.hifi_reads.bc2188--bc2188.hifi_reads.fastq.gz
+/scicore/home/ebertd/dexter0000/aphid/data_round2/fastx/m64141e_240627_145720.hifi_reads.bc2189--bc2189.hifi_reads.fastq.gz
+/scicore/home/ebertd/dexter0000/aphid/data_round2/fastx/m64141e_240627_145720.hifi_reads.bc2190--bc2190.hifi_reads.fastq.gz

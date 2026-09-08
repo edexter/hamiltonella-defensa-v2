@@ -68,12 +68,17 @@
 #
 # USAGE
 #
+#   bash scripts/build_initial_templates.sh S07 S07_templates.fa \
+#        RHS:contig_3,contig_4 CdtB:contig_5,contig_1
+#
 #   bash scripts/reconstruct_phages_and_integration_sites.sh S07 contig_02 \
-#        data/reference/S07_initial_templates.fasta
+#        S07_templates.fa
 #
 # Arguments: sample ID, name of the chromosome contig in the curated assembly,
-# and a two-record FASTA of starting templates. The starting templates are the
-# sample's own v1 contigs grouped by integrase type, concatenated per phage.
+# and a two-record FASTA of starting templates. The templates are the sample's
+# own pre-curation contigs grouped by integrase type and toxin family and
+# concatenated per phage; build_initial_templates.sh makes that file and its
+# header explains how a contig is assigned to a group.
 # Edit data/config.sh first. Run from the root of the repository.
 #
 # DEPENDENCIES

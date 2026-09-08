@@ -1,0 +1,32 @@
+# Per-sample arguments for scripts/build_v2_assemblies.py, and the inputs each
+# sample needs before it can be built. Without this table the assemblies cannot
+# be regenerated, because the arguments are not derivable from the inputs.
+#
+# strain    the strain identifier written into the FASTA headers
+# replace   contigs whose sequence is substituted, as contig=source. A source of
+#           "splice" means the contig is produced by scripts/lib/integrate_prophage.py
+#           from the curated chromosome, the phage genomes and that sample's
+#           integration-site table; "gapfill" means it is produced by filling
+#           scaffold gaps from the assembly graph.
+# drop      contigs removed from the assembly, semicolon separated
+# note      why anything is dropped or replaced
+#
+# Contigs are dropped for three reasons and the note says which: "aphid" for host
+# DNA that passed the contamination filter, "APSE fragment" for a partial phage
+# sequence labelled as chromosome, and "APSE contig" for a phage genome that is
+# represented as a prophage inside the chromosome instead.
+sample	strain	replace	drop	note
+S01	H15	-	-	no change
+S02	H16	-	contig_06	contig_06 is aphid
+S03	H28	contig_21=splice	contig_10;contig_12;contig_13;contig_15;contig_22	contig_10/12/13/15 aphid; contig_22 APSE contig, spliced into contig_21
+S04	H42	-	-	no change
+S05	H76	contig_02=splice;contig_11=splice	contig_03;contig_04;contig_05;contig_14;contig_15;contig_16;contig_17	contig_15/16/17 aphid; contig_03/04/14 APSE fragments; contig_05 APSE contig, spliced into contig_02 and contig_11
+S06	H85	-	-	no change
+S07	H101	contig_02=splice	contig_05	contig_05 APSE contig, spliced into contig_02 at two sites
+S08	H103	-	contig_21	contig_21 is aphid
+S09	H131	-	contig_36	contig_36 is aphid
+S10	H191	contig_01=gapfill	-	two scaffold gaps in contig_01 filled from the assembly graph
+S11	H214	-	-	no change
+S12	H244	-	-	no change
+S13	H402	-	-	no change
+S14	H619	-	-	no change

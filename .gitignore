@@ -43,3 +43,7 @@ tmp*
 # Working files written by scripts/lib/classify_replicons.py while it runs. They
 # are regenerated on every run and are not results.
 results/.replicon_work/
+
+# Python bytecode
+__pycache__/
+*.pyc

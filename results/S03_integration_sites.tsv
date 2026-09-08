@@ -1,0 +1,19 @@
+# APSE prophage integration site in Hamiltonella defensa S03 (strain H28).
+# Coordinates are 1-based inclusive and refer to the delivered 2024 curated
+# contigs, so they can be applied to the published assembly.
+# att_core is the direct repeat duplicated by integration; it is present once in
+# the uninfected chromosome (attB) and once in the free phage (attP), and twice
+# (attL, attR) once the prophage is in place.
+#
+# The core here is the canonical integrase-A core, byte-identical to the one
+# found in S05 and S07, and it occurs exactly once in the chromosome and once in
+# the phage. The phage occurrence is on the opposite strand, so the phage is
+# spliced in reverse orientation.
+#
+# S03 has the thinnest placement evidence in the panel: 14 reads cross the
+# junction against 4 running continuously across the empty site, at a chromosome
+# coverage of about 9x. The ratio is consistent with the other samples but rests
+# on far fewer reads, and it is recorded here rather than being presented as
+# equivalent to the S05 and S07 sites.
+sample	site	contig	chr_attB_start	chr_attB_end	att_core_len	att_core_seq	phage	phage_attP_start	phage_attP_end	orientation	integrase_type	toxin	lysogenic_reads	excised_reads	locus
+S03	1	contig_21	37946	38007	62	TAACCCCTTGATTTTATTGGTACGCCCTACTGGATTCGAACCAGTGACCTACGGCTTAGAAG	S03_APSE_v2	15204	15265	reverse	A	CdtB	14	4	tRNA gene 3' end

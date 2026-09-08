@@ -1,0 +1,496 @@
+METHODS
+
+
+1. APHID LINES AND BACTERIAL ISOLATES
+
+Fourteen laboratory lines of the black bean aphid Aphis fabae were used. All fourteen share a
+single host genotype, clone A06-407, and each carries a different isolate of the facultative
+endosymbiont Candidatus Hamiltonella defensa. The isolates are designated H15, H16, H28, H42,
+H76, H85, H101, H103, H131, H191, H214, H244, H402 and H619, and are referred to below by the
+sample identifiers S01 to S14 in that order. Every line also carries the obligate endosymbiont
+Buchnera aphidicola, which likewise occurs as a single genotype across the panel.
+
+2. DNA EXTRACTION AND SEQUENCING
+
+High molecular weight DNA was extracted from each line with the illustra Nucleon PhytoPure
+genomic DNA extraction kit at the 0.1 g scale (Cytiva, product code RPN8510), following the
+manufacturer's protocol. Whole aphids were ground with a plastic pestle in the kit's lysis
+reagent. This is a chloroform extraction intended for plant and fungal tissue, and it was used
+here for its polysaccharide-binding resin: aphids feed on phloem sap, and plant-derived
+polysaccharide carried in the insect tissue otherwise co-purifies with the DNA and interferes with
+library preparation.
+
+DNA submitted for sequencing ranged from 11.8 to 50.6 micrograms per sample, with absorbance
+ratios of 1.82 to 1.85 at 260/280 nm and 1.88 to 2.28 at 260/230 nm.
+
+Libraries were prepared and sequenced at the Functional Genomics Center Zurich, with a fragment
+size selection during library preparation targeting molecules of approximately 8 kb. All fourteen
+samples were multiplexed with symmetric dual barcodes bc2177 to bc2190 on a single PacBio SMRT
+cell and sequenced as circular consensus (HiFi) reads in run m64141e_240627_145720. Yield ranged
+from 0.80 to 1.40 Gb per sample, giving 99,660 to 165,563 reads per sample and 1,854,542 reads in
+total. Mean read length ranged from 7,527 to 8,639 bp and read N50 from 7,678 to 8,983 bp, so the
+recovered fragment lengths match the size selection. Full per-sample statistics are given in
+Supplementary Table S1.
+
+
+3. METAGENOME ASSEMBLY AND SELECTION OF HAMILTONELLA READS
+
+Each aphid sample is a mixture of host, obligate symbiont, facultative symbiont, bacteriophage
+and environmental sequence, so reads belonging to H. defensa were identified through an initial
+metagenome assembly before the genome itself was assembled. The two assemblers used at the two
+stages were chosen for complementary strengths: hifiasm handles a mixed sample containing
+non-target sequence better, while Flye resolves circular elements more reliably, so the first is
+used to separate the target from everything else and the second to produce the genome.
+
+The HiFi reads of each sample were assembled separately with hifiasm in primary mode using eight
+threads, and the primary contig graph was converted to FASTA:
+
+    hifiasm --primary -t 8 -o <sample> <reads.fastq.gz>
+
+Contigs were then classified with BlobToolKit from four kinds of evidence. Read coverage was
+obtained by mapping the sample's own reads back to its assembly:
+
+    minimap2 -ax map-pb -t 8 <assembly> <reads> | samtools view -bS -@ 8 - \
+      | samtools sort -@ 8 -o <sample>.bam
+    samtools index -c <sample>.bam
+
+Gene-space completeness was assessed with BUSCO in genome mode against the enterobacterales_odb10
+lineage. Nucleotide-level taxonomy came from a local copy of the NCBI nt database:
+
+    blastn -db nt -query <assembly> -outfmt "6 qseqid staxids bitscore std" \
+      -max_target_seqs 10 -max_hsps 1 -evalue 1e-25 -num_threads 16
+
+and protein-level taxonomy from the UniProt reference proteomes:
+
+    diamond blastx --query <assembly> --db reference_proteomes --outfmt 6 qseqid staxids bitscore \
+      --sensitive --max-target-seqs 1 --evalue 1e-25 --threads 16
+
+The four evidence types were combined into a BlobDir with blobtools create, using the NCBI
+new_taxdump taxonomy, and contigs were selected interactively in the BlobToolKit viewer. The
+retained set was defined by GC content between 0.35 and 0.50, exclusion of superkingdom Eukaryota,
+exclusion of the enterobacterial families Erwiniaceae, Yersiniaceae and Morganellaceae and of the
+genus Providencia, and deliberate retention of phylum Uroviricota so that tailed bacteriophage
+sequence was kept. Minimum contig length and minimum coverage were set per sample. The saved
+filter definitions for all fourteen samples are distributed with the analysis code, so the
+selection can be replayed without the interactive step.
+
+Reads were then assigned to the retained contigs. Contig names were taken from the filtered
+assembly, the names of reads aligning to those contigs were extracted from the coverage alignment,
+and the corresponding reads were pulled from the original FASTQ with seqtk subseq. These filtered
+read sets are the input to genome assembly.
+
+Because this selection step precedes everything else, it was audited directly. All 68,863 contigs
+discarded across the panel were aligned against the H. defensa 5AT reference genome (CP001277.1)
+and against the APSE genomes reported here. Only two discarded contigs carry genuine target
+sequence, and both are wholly contained in the retained assembly of their sample, so nothing was
+lost by removing them. The remainder align over only 1.5 to 2.5 kb at 88 to 90 per cent identity.
+That figure is interpretable because the retained chromosomes of this panel align to 5AT at 91.1
+to 94.6 per cent weighted identity over 1.5 to 2.0 Mb, so alignments below about 91 per cent are
+not H. defensa.
+
+
+4. GENOME ASSEMBLY
+
+The filtered read set of each sample was assembled de novo with Flye 2.9.2 in HiFi mode using
+eight threads and otherwise default parameters:
+
+    flye --pacbio-hifi <reads.fq> --out-dir <sample> --threads 8
+
+Sample S07 did not assemble under these parameters, returning zero disjointigs, and was assembled
+with Flye 2.9.3 using a longer minimum overlap in metagenome mode, --min-overlap 10000 --meta.
+The requirement for metagenome mode in this one sample is itself informative: that mode exists to
+handle uneven coverage arising from several elements of differing abundance, which is the
+configuration established for this sample in section 7.
+
+Each assembly was passed through a second BlobToolKit classification, built as above but from
+coverage, BUSCO and blastn evidence only, and inspected for residual non-target contigs.
+
+
+5. CONTIG CURATION AND REPLICON ASSIGNMENT
+
+Each assembly was self-aligned with minimap2 to identify contigs contained within another contig.
+Containment alone does not determine what such a pair represents. APSE bacteriophage genomes share
+a highly conserved backbone and differ mainly at a single toxin-encoding module, so two distinct
+phages present as one contig nested inside another exactly as one phage assembled in both its
+integrated and its excised form does. The two cases were therefore separated on content rather
+than on structure: on which toxin coding sequence a contig carries, on which integrase type it
+carries, and on read depth. A contig indistinguishable from a region of the longer contig, with
+the same toxin and the same integrase, was removed as redundant. A contig carrying a toxin or an
+integrase absent from the longer contig was retained, and such contigs are the starting templates
+for the read partitioning described in section 7.
+
+Chromosome fragments whose ends overlapped by several kilobases, confirmed against the assembly
+graph, were joined into a single sequence. Where the terminal overlap supported a join but the
+sequence spanning it was absent from both contigs, the intervening sequence was taken from the
+corresponding edge of the assembly graph and verified against reads. This applies to two joins in
+S10, where the missing sequence is a 3,243 bp ribosomal RNA operon present in three copies in that
+genome, and it matches the reads crossing each join at 99.9 per cent identity.
+
+Every contig was then assigned to a replicon class from four independent lines of evidence:
+alignment against published H. defensa genomes and plasmids (CP001277.1, CP017606.1, pHD5AT,
+p3_M47 and p4_M47), against the aphid genome assembled from the same reads, and against the APSE
+genomes reported here; presence of the same sequence in other samples of the panel; topology; and
+read depth expressed as a ratio to the chromosome of the same sample. Contigs aligning to the
+aphid genome along their full length are host DNA and are not part of the H. defensa assembly;
+ten such contigs were identified across S02, S03, S05, S08 and S09 and are excluded.
+
+Topology in the FASTA headers is a statement about the molecule, tested against reads as described
+in section 9, and is not taken from the assembler. Every chromosome is reported as linear: no read
+links the ends of any chromosome in this panel, and closing them is beyond the resolution of this
+data. Headers otherwise follow NCBI submission specification. Information about how each sequence
+was produced is kept out of the headers and recorded in a separate provenance table.
+
+
+6. DETECTION OF MULTIPLE APSE PHAGES AND MULTIPLE HAMILTONELLA STRAINS
+
+Every sample was screened for the presence of more than one APSE phage, and separately for the
+presence of more than one H. defensa strain, using three tests with independent blind spots. The
+tests are run together because each fails in a different case: heterozygosity detects a second
+phage only if the assembler collapsed the two into one sequence, and misses two phages divergent
+enough to assemble separately; toxin content detects a second phage only if it carries a
+different, catalogued toxin, and misses two phages of the same family; and integrase typing
+detects a second phage only if the two carry different integrases.
+
+Heterozygosity was measured by mapping each sample's filtered reads to its own assembly with
+minimap2 in HiFi mode and generating a pileup with samtools mpileup -q 20 -Q 20 --no-BAQ. A site
+was counted as heterozygous at a read depth of at least 10, a minor allele count of at least 3 and
+a minor allele fraction of at least 0.15. Mapping quality was capped at 20 to exclude reads that
+align equally well to two near-identical copies of the same sequence, and base quality at 20. The
+depth and count thresholds keep isolated sequencing errors, which in HiFi data are almost always
+single-read events, from being counted; the 0.15 fraction sits far above the error floor of a
+platform with better than 99.5 per cent base accuracy. Heterozygous sites were counted per
+kilobase of APSE-aligned sequence, restricted to APSE-aligned intervals rather than whole contigs,
+because a prophage occupies about two per cent of a 2 Mb chromosome and whole-contig statistics
+dilute it to nothing.
+
+The spatial distribution of heterozygous sites carries as much information as their number. Sites
+were clustered with a maximum gap of 20 kb, and a sequence whose sites span more than half its
+length was called dispersed. This distinction is necessary rather than cosmetic: every H. defensa
+chromosome in this panel contains a single block of roughly 10 kb that generates hundreds of
+heterozygous sites, and without the clustering step every sample would be reported as a strain
+mixture. In S12 that block spans 9.9 kb of a 987 kb contig, a dispersal fraction of 0.010.
+
+Toxin content was tested by searching both the assembly and the raw reads for each of fifteen APSE
+toxin coding sequences spanning five families, requiring 80 per cent of the gene to be covered
+before it was called present. Searching the reads as well as the assembly is what allows a toxin
+that is present in the sample but absent from every assembly to be detected. Toxin names were
+normalised to their family before counting, because two members of one family can be similar
+enough to cross-map: the cdtB genes of S07 and S12 differ at a single nucleotide.
+
+Integrase type was determined by aligning two reference integrase genes against the assembly with
+minimap2 -x asm20, calling a type present at 90 per cent breadth and 95 per cent identity. The two
+integrases are unrelated, 1,173 bp and 391 aa for type A and 1,035 bp and 345 aa for type B, and
+share no 21-mer. Carrying both types means two phages, and this test needs no reads.
+
+The same heterozygosity measurement applied to the chromosome answers the strain question. This
+control is necessary rather than optional, because two H. defensa strains each carrying one phage
+would produce the same phage-level signal as one strain carrying two.
+
+The screen has no measurable false-positive rate at phage-level depth: in S12 the APSE sequence
+yields zero heterozygous sites at 1,394-fold coverage. A negative result was reported as
+insufficient power rather than as an absence wherever APSE depth fell below 30-fold, which applies
+to S10 at 10.2-fold and S14 at 15.3-fold.
+
+Two samples, S05 and S07, carry two APSE phages, agreed by all three tests. Every other sample
+carries one. Every chromosome in the panel is a single strain.
+
+
+7. SEPARATION AND ASSEMBLY OF CO-OCCURRING PHAGES
+
+Where a sample carries more than one APSE phage, the two share a near-identical backbone and
+cannot be separated by assembly alone. Reads were therefore assigned to one phage or the other
+before anything was assembled, and each set assembled independently. Throughout this procedure the
+reference sequences act only as a classifier of reads and contribute no base to the output: the
+reported sequence comes entirely from de novo assembly of the sorted reads. The requirement on
+the starting references is accordingly not that they be free of misassembly but that between them
+they span the diversity present in the sample, since a lineage with no matching reference has its
+reads misassigned rather than merely mis-polished.
+
+Starting references were the sample's own assembly contigs, grouped by integrase type and toxin
+family as described in section 5. Canonical 31-mers were computed from raw read sequence, and
+those occurring in exactly one reference were treated as diagnostic. A read carrying diagnostic
+k-mers of one phage was assigned to that phage. A read carrying no diagnostic k-mer of either was
+assigned to both, which is correct because the phages are identical wherever such a read lies, so
+both assemblies receive the same sequence there, and withholding these reads fragments both. A
+read carrying diagnostic k-mers of both phages was treated as a recombinant molecule and withheld
+from both sets, subject to the criterion in section 12.
+
+Sorting on k-mers rather than on alignment score is necessary at this level of similarity. A read
+consisting of eight kilobases of shared backbone plus twenty discriminating positions falls below
+any sensible alignment score margin and is called ambiguous, so the more abundant phage floods the
+minority set and the assembler builds an incorrect consensus across the shared region.
+
+Where one lineage is itself a recombinant of the other two it has almost no unique k-mers, since
+nearly every k-mer it carries is shared with a parent. Reads were assigned in that case by
+containment, that is by how many of a read's k-mers each reference holds, because a mosaic matches
+a mosaic reference along its whole length while each parent matches only part of it.
+
+Each read set was thinned with seqtk to approximately 150-fold and assembled with Flye 2.9.6:
+
+    flye --pacbio-hifi <pile.fq> --out-dir <out> --meta
+
+Thinning is necessary rather than cosmetic: the untrimmed sets reach several thousand-fold, which
+is far more than the assembler requires and enough to destabilise it. The depths used were 147,
+146, 153, 167 and 138-fold for the five reconstructions.
+
+The procedure was iterated, each round's assemblies becoming the next round's classifier, until
+read assignment stopped changing. Assignment converged after one iteration in S07, with 99.8 per
+cent of reads receiving the same call, and after two in S05. Iteration is stopped at convergence
+rather than continued: for a lineage that is itself a recombinant, further rounds make the read
+set more exclusive and the assembly correspondingly shorter, from 36,535 to 36,345 to 36,248 to
+33,092 bp across successive rounds, so the round of best coverage is the one reported.
+
+
+8. ACCEPTANCE CRITERIA AND VALIDATION OF THE PHAGE GENOMES
+
+Each phage genome had to satisfy five conditions before being accepted.
+
+First, heterozygosity. The reads assigned to a phage were mapped back onto its own assembly and
+heterozygous sites counted as in section 6. The benchmark is the single-phage sample S12 at 0.00
+sites per kb. Four of the five reconstructions reach 0.00. The fifth, the RHS phage of S05, stands
+at 0.13 per kb; all five sites fall within one 115 bp window in which a third, recombinant lineage
+is derived from this one and the two cannot be separated. This is a limit of the data rather than
+an error in the assembly.
+
+Second, topology established against reads as described in section 9, and a length consistent with
+the approximately 39 kb APSE genome.
+
+Third, content: exactly one toxin locus and exactly one integrase locus, of the expected types.
+
+Fourth, absence of any internal repeat longer than 3 kb, which would indicate that the assembly
+had collapsed or duplicated the genome.
+
+Fifth, coverage evenness. Any 500 bp window falling below 75 per cent of the median depth was
+flagged and inspected. This test is included because heterozygosity counts substitutions and is
+blind to a locus at which two lineages carry entirely unrelated sequence: there the minority reads
+do not align at all, so they generate no heterozygous site and appear instead as a drop in depth.
+This is how a polymorphic 436 bp cassette was found in the RHS phage of S05, in a genome that had
+already passed the heterozygosity test, at which the population carries two unrelated sequences in
+a ratio of approximately 58 to 42. Both versions are reported, because mapping against only the
+majority version loses 42 per cent of the reads at that locus.
+
+Reproducibility was tested by assembling each phage from read sets that share no read. Each set of
+assigned reads was divided into non-overlapping subsets of approximately 150-fold and each subset
+assembled independently, giving 27 assemblies across the five reconstructions. Comparison is
+rotation-invariant, one sequence being doubled head to tail before alignment, because a circular
+assembly may begin at any base. Twenty-one of the 27 reproduced the accepted sequence exactly, at
+100 per cent coverage with no differences. Of the remaining six, two recovered the alternative
+allele of the polymorphic cassette described above and two are the recombinant lineage, which
+necessarily shortens when its read set is halved.
+
+Two further agreements, each reached by an independent route, support the procedure. The RHS phage
+of S05 assembled from partitioned reads is identical over 39,286 bp to the contig assembled
+directly from the whole read set. The phage genomes excised from the chromosomes of S04 and S13
+are identical to the phage of S03, which assembled as a free circular contig: 35,455 bp, three
+samples, two methods.
+
+
+9. PHAGE REFERENCE GENOMES: EXCISION AND TOPOLOGY
+
+A standalone reference genome is reported for every APSE phage in the panel. Where the phage is
+integrated in a chromosomal contig, it was excised at the direct repeat that integration
+duplicates. The repeat was located empirically, as the longest exact match between the two
+boundary regions, rather than assumed from a known sequence; repeat lengths of 48, 53 and 62 bp
+were found. Excising between the two copies and retaining one reconstitutes the phage genome. A
+same-lineage probe was used to locate the phage, because a divergent probe under-calls its extent
+substantially.
+
+Whether the phage also exists as a free circle is a separate question and was answered with reads.
+The sequence was rotated by half its length so that its two ends meet in the middle, the sample's
+reads were mapped to the rotated sequence, and reads spanning the join were counted; a genome
+carried only as an integrated prophage cannot produce such a read, because in the chromosome its
+two ends lie a whole chromosome apart. A sequence was called circular at five or more spanning
+reads. The counts are 933 for S01, 1,383 for S04, 1,171 for S12, 898 for S13, 217 for S03, 96 for
+S02, 110 for S08, 96 for S09, 2 for S11 and 0 for S06 and S14.
+
+The assembler's own circularity flag disagrees with the reads in both directions, which is why it
+is not used: S02 and S08 were flagged linear and are circular, while S06 carries a complete phage
+sequence whose circular form is not observed, with zero spanning reads and a depth only twice that
+of its chromosome, against forty times in a sample carrying the same lineage. S06 and S11 are
+therefore reported as linear.
+
+Two phage genomes are incomplete and are reported as such rather than being extended. The phage of
+S10 is supported by only 46 reads at approximately tenfold depth; assembly reached 39,246 bp, of
+which the terminal 5,151 bp rested on two- to fourfold coverage and was removed, leaving 34,095 bp
+supported at fivefold or better. The phage of S14 is a 19,800 bp fragment at thirteenfold depth.
+
+
+10. PROPHAGE PLACEMENT IN THE CHROMOSOME
+
+A prophage was placed within a chromosome only where reads spanning the junction between
+chromosome and phage supported it. The way the placement was made depends on the shape of the
+assembly.
+
+Where the assembler left the chromosome in fragments flanking the phage, the phage was placed in
+the order indicated by the terminal overlaps of the flanking contigs and by the assembly graph,
+and the resulting joins were verified against reads. Where the assembler had already placed the
+prophage inside a chromosomal contig, the placement was verified against the same evidence and
+left unchanged. Where the chromosome had assembled contiguously, the integration site was located
+directly and the phage spliced in, as follows.
+
+Reads aligning partly to the chromosome and partly to a phage were collected from the
+supplementary alignment records of a mapping against chromosome and phage genomes together. The
+chromosome-side breakpoints of these reads cluster to single bases, and the two breakpoints of one
+site are the ends of the att core, the direct repeat that integration duplicates. The core was
+then recovered independently as the longest exact match between chromosome and phage around those
+breakpoints, which is a check on the coordinates rather than a restatement of them, since it
+either matches exactly or it does not. Reads running continuously across the empty site, carrying
+no phage sequence, give the ratio of the integrated to the excised configuration. The phage was
+inserted as the circle opened at its att core, the core duplicated to form attL and attR, in the
+orientation the sequence dictates.
+
+Each placement was validated by requiring reads spanning every new junction in both orientations,
+no accumulation of soft-clipped reads at any junction, heterozygosity within the prophage at
+chromosomal levels, and improvement in soft-clipping and primary alignment counts genome-wide. In
+S07 the four junctions are spanned by 18 and 29, 577 and 646, 33 and 27, and 274 and 325 reads;
+reads carrying at least 500 bp of soft clipping fall from 10,782 to 3,568 across the genome when
+the prophages are represented, and primary alignments rise from 24,986 to 25,084.
+
+The prophage is placed in ten of the fourteen samples. In four it is not, and the reasons differ.
+In S02, S09 and S14 too few reads cross the junction to locate a site, 3, 0 and 7 respectively,
+which is a limit of chromosomal coverage at 16, 4.5 and 18-fold rather than a statement about the
+biology. In S08 the position is constrained but not determined: 65 reads place the phage against
+the end of one chromosomal contig, but that flank and the start of the adjacent contig share no
+sequence, so there is no att repeat at which to splice, and placing it would assert a scaffold
+join on evidence from one side only. In all four samples the phage is reported as a separate
+reference genome and the chromosome is left unchanged.
+
+The att core is a property of the integrase type rather than of the sample. The integrase-A core
+is 62 bp and the integrase-B core 58 bp, and each is identical between the two samples in which it
+occurs. Both lie at the 3' end of a tRNA gene, the canonical integration target for this phage
+group, and in each phage the integrase gene lies between 8 and 100 bp from its own attP. Integrase
+type therefore predicts which chromosomal site a phage occupies, not merely that two phages occupy
+different ones.
+
+One occupancy is not determined and is reported as such. In S05 two lineages share an integrase
+type and therefore compete for a single att core at approximately 805 kb. Occupancy can be counted
+only on the attL side, because on the attR side the two lineages are identical; that count gives 5
+against 7, and a count over a larger read set disagreed in direction. The complete circular
+lineage is placed at that site because it is the complete one, not because it is the more common.
+
+
+11. PHAGE LINEAGE ASSIGNMENT
+
+APSE genomes were compared by containment of canonical 31-mers, an alignment-free measure that
+reports an intermediate value where two genomes share a backbone but differ at a cassette, and
+grouped at a containment threshold of 0.95. Across the eighteen genomes compared, within-group
+containment is 0.977 to 1.000 and between-group containment is 0.442 to 0.828, with no pair
+anywhere between 0.83 and 0.98; the grouping is therefore insensitive to the choice of linkage
+rule. Groups are named APSE-toxin-numeral.
+
+The numeral is necessary. A shared toxin does not indicate a shared lineage: this panel contains
+three distinct CdtB-carrying groups and three distinct RHS-carrying groups, and two phages sharing
+both toxin family and integrase type can share as little as 59 per cent of their 31-mers. The
+published APSE-1 genome carries the same Shiga-like toxin as the phage of S09 while sharing 62 per
+cent of its 31-mers with it. Integrase type is recorded but is deliberately not part of the name,
+since sixteen of the eighteen genomes carry type A at 99.1 to 100 per cent identity and a
+character that is nearly invariant would imply a role in defining groups that it does not have.
+
+No phylogenetic tree is presented. These genomes recombine, as shown in section 12, so a single
+branching topology would describe a history that did not occur.
+
+A partial genome cannot be assigned to a group when the candidate groups share a backbone. The
+19,800 bp fragment recovered from S14 lies within sequence shared by the two MAC-toxin groups,
+matching one at 0.979 and the other at 0.998, and is reported as unassigned.
+
+
+12. RECOMBINATION BETWEEN CO-OCCURRING PHAGES
+
+Recombination between two co-occurring phages was measured on raw reads, independently of any
+assembly. Canonical 31-mers were computed for every read touching either phage, and those k-mers
+diagnostic of each phage, present in one and absent from the other, were identified. A read was
+called mosaic only if each parent contributed at least 15 diagnostic k-mers and at least 15 per
+cent of the read's informative k-mers, and if the two parents' k-mers formed no more than two
+blocks along the read. The requirement for spatial segregation is what makes the test evidence: a
+misassembled reference can make mapped reads appear to switch parentage, but it cannot place two
+parents' diagnostic k-mers into a single molecule in segregated order. Without this condition the
+test counts sequencing error and short shared tracts as recombination.
+
+Each transition was converted into coordinates in both parent genomes. A position within a read is
+not a genomic position, and treating it as one makes a single junction appear as many. Two further
+artefacts were excluded: on a circular genome represented as a linear sequence, every read crossing
+the origin is split, and where two genomes share a backbone that split lands on the other genome;
+and a genuine crossover must join homologous positions in the two parents.
+
+The result was corroborated by a four-gamete test across non-homologous cassettes, that is
+segments present in one phage with no counterpart in the other, so that presence or absence alone
+assigns ancestry with no sequence identity involved.
+
+The distribution of crossover positions distinguishes ongoing recombination from a recombinant
+that has become established. Crossovers dispersed across many positions indicate recombination
+without a fixed product; concentration at a single position indicates one recombinant molecule
+that arose once and propagated. In S07, 61.1 per cent of reads are pure RHS, 31.4 per cent pure
+CdtB, 5.3 per cent uninformative and 2.2 per cent mosaic, with 196 crossovers at 57 distinct
+positions across the shared backbone; the four-gamete test independently gives 2.3 per cent,
+reciprocal in both directions. In S05, 166 of 185 split reads break at a single position, and the
+lineage so defined occupies an integration site, carries a combination of toxin and integrase
+found in neither parent, and assembles at 0.00 heterozygous sites per kb. It is reported as a
+third lineage, partial and not circular, because the only feature distinguishing it from its two
+parents is a single recombination junction: reads far from that junction are indistinguishable
+from a parent and cannot be assigned to it, so its genome cannot be closed.
+
+
+13. ASSEMBLY STATISTICS AND COMPLETENESS
+
+Assembly statistics were computed from the final sequences. Completeness was assessed with BUSCO
+5.1.2 in genome mode with prodigal 2.6.3, offline, against the enterobacterales_odb10 lineage
+dataset (created 2020-03-06; 211 genomes; 440 markers). The number of markers is stated because a
+BUSCO percentage is not interpretable without its denominator and pinning the dataset is what makes
+these assemblies comparable with one another and with published H. defensa genomes.
+
+Read depth is reported separately for the chromosome and for the prophage. The phage replicates
+actively in most samples and reaches tens to hundreds of times chromosomal depth, so a single
+assembly-wide mean describes neither; in S01, for instance, the chromosome sits at 33-fold and the
+phage at approximately 1,300-fold. Depth was measured by mapping reads to the final assembly rather
+than taken from the assembler's own estimate, and the prophage interval was located by aligning the
+phage genome to the assembly rather than assumed.
+
+
+14. GENOME ANNOTATION
+
+All fourteen genomes were annotated with the NCBI Prokaryotic Genome Annotation Pipeline (PGAP),
+run as a standalone installation on an Amazon EC2 instance, software revision 2026-06-18.build8602:
+
+    pgap.py -r -o <out> -g <genome.fasta> -s 'Candidatus Williamhamiltonella defendens'
+
+Candidatus Williamhamiltonella defendens, taxid 138072, is the currently accepted name for the
+organism formerly designated Candidatus Hamiltonella defensa. Annotation combines a best-placed
+reference protein set with ab initio prediction by GeneMarkS-2+, and annotates genes, coding
+sequences, rRNA, tRNA and other non-coding RNA.
+
+The standalone phage reference genomes are distributed without annotation; the toxin, integrase
+and attP coordinates reported for them were determined as described in sections 6, 9 and 10.
+
+[TO BE COMPLETED: EC2 instance type, container runtime and version, and PGAP reference data
+version.]
+
+
+15. ASSEMBLY OF THE APHID HOST AND PRIMARY SYMBIONT GENOMES
+
+Genomes of the host Aphis fabae and of its obligate symbiont Buchnera aphidicola were assembled
+from the same sequencing, as both occur as a single genotype across the fourteen samples. These
+genomes come from a different assembly than the H. defensa genomes above: rather than being
+assembled per sample, all fourteen read sets were pooled into a single hifiasm metagenome assembly
+in primary mode, in order to maximise coverage of the two single-genotype organisms.
+
+    hifiasm -f0 --primary -t 8 -o merged <all fourteen read files>
+
+Contigs were classified with BlobToolKit as in section 3, from read coverage obtained with
+minimap2 -ax map-hifi, blastn against NCBI nt, and BUSCO scores computed twice, against
+hemiptera_odb10 (2020-08-05) for the host and enterobacterales_odb10 for the symbiont, since the
+two organisms require different marker sets. Two filters were then applied to the same assembly to
+extract the aphid and the Buchnera contigs respectively.
+
+The Buchnera assembly was curated by hand to one circular chromosome and three plasmid-like
+elements; two further elements were multi-pass duplication artefacts and were trimmed, and one was
+a duplicate of a chromosomal region and was removed. It was annotated with PGAP alongside the
+H. defensa genomes.
+
+The aphid assembly was cleaned with funannotate clean, which removes short contigs that are
+contained within longer ones, at default coverage and identity thresholds. Repeats were modelled
+with RepeatModeler using BuildDatabase and -LTRStruct, and soft-masked with RepeatMasker
+(-qq -xsmall) against the resulting library. Gene models were trained with funannotate train on
+publicly available Aphis fabae RNA-seq (BioSamples SAMN10606880 to SAMN10606919, unstranded) and
+predicted with funannotate predict using --organism other, --ploidy 2, --max_intronlen 50000,
+--repeats2evm and --optimize_augustus. Predicted proteins were searched with InterProScan
+5.71-102.0 (-goterms -pa) and the results integrated with funannotate annotate.

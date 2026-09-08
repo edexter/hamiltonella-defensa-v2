@@ -1,13 +1,17 @@
 # Candidate lineage names for every APSE genome in the panel.
 #
-# Lineages were defined by single-linkage clustering on 31-mer containment at a
-# 0.95 threshold. The data separate cleanly: within a group containment is
-# 0.98-1.00, between groups 0.55-0.75, with almost nothing in between.
+# Lineages were defined by grouping genomes at a 31-mer containment threshold
+# of 0.95. The data separate so cleanly that the grouping does not depend on the
+# linkage rule: across the 18 genomes, within-group containment is 0.977-1.000
+# and between-group containment is 0.442-0.828, with no pair anywhere between
+# 0.83 and 0.98. The one intermediate case is the recombinant lineage, which
+# sits at 0.872 and 0.824 to its two parents; that is why it is described as a
+# recombinant of two lineages rather than as a lineage of its own.
 #
 # Naming is APSE-<toxin>-<numeral>. The toxin is kept because it is the useful
 # biological label; the numeral is what prevents the name implying that two
 # phages sharing a toxin are the same lineage. They frequently are not: this
-# panel contains three distinct CdtB lineages and two distinct RHS lineages,
+# panel contains three distinct CdtB lineages and three distinct RHS lineages,
 # and the published APSE-1 carries the same Shiga-like toxin as S09 while
 # sharing only 62 % of its 31-mers with it.
 #

@@ -11,15 +11,47 @@ stated.
 
 ## What is here
 
+Paths are relative to the root of the repository. This file sits in `deliverables/` with the
+written documents; the sequences and tables sit where the scripts write them.
+
+**The documents, in this folder**
+
 ```
-assemblies_v2/            one file per sample: chromosome, plasmids, and prophages in place
-results/phage_references/ one file per APSE genome, per sample
-results/v2_provenance.tsv how every sequence was produced
+deliverables/README.md            this file: what was delivered, and its limitations
+deliverables/METHODS.txt          the methods section, written for a manuscript
+deliverables/sample_summaries.md  what changed in each of the fourteen samples, and why
+deliverables/assembly_stats.tsv   assembly statistics and BUSCO completeness, per sample
+deliverables/assembly_stats.xlsx  the same table as a spreadsheet
+```
+
+**The sequences and the tables describing them**
+
+```
+assemblies_v2/                    one file per sample: chromosome, plasmids, and prophages in place
+results/phage_references/         one file per APSE genome, per sample
+results/phage_reconstructions/    the phage genomes rebuilt from partitioned reads
+results/v2_provenance.tsv         how every sequence was produced
 results/phage_lineage_names.tsv   which lineage each sample's phage belongs to
+results/contig_inventory.txt      one line per contig saying what it is
+results/v2_checksums.txt          checksums for every delivered sequence file
+scripts/                          everything needed to reproduce the above, from raw reads
 ```
 
 Eighteen phage reference files cover the fourteen samples. S05 carries four and S07 two; the rest
 carry one each.
+
+`METHODS.txt` is plain text and describes the whole pipeline, from DNA extraction through
+sequencing, assembly, curation, phage separation and validation to annotation. A few values in it
+are marked as still to be filled: the NCBI accessions, some tool versions from the assembly stage
+that were never recorded, and the sequencing instrument details. Each is marked in the text rather
+than guessed at.
+
+`scripts/README.md` gives the pipeline in order, says which script produces each delivered file,
+and lists the steps that were done by hand along with the file that records what was decided.
+
+The remaining documents in `docs/` are working material rather than deliverables: the project
+record, the plan, the outstanding items, the tool documentation for the screening script, the
+files received from collaborators, and the reference literature.
 
 ---
 
@@ -59,7 +91,7 @@ technology.
 
 ## Prophage placement
 
-The prophage is in place in **eleven of fourteen** samples.
+The prophage is in place in **ten of fourteen** samples.
 
 | | Samples |
 |---|---|
@@ -109,17 +141,25 @@ because the sequence it does contain is shared between two candidate lineages.
 
 ## What changed from the 2024 delivery
 
-**Ten samples are byte-identical in sequence** — S01, S02, S04, S06, S08, S09, S10, S11, S12, S13.
-Only their headers changed. That was the control: a pipeline that altered them would have been
-wrong.
+**No base of any retained sequence was altered except where stated below.** That was the control:
+a pipeline that quietly rewrote sequence would have been wrong.
 
-Four samples changed, and only where intended:
+**Seven samples are unchanged** — S01, S04, S06, S11, S12, S13, S14. Every contig is byte-identical
+to the 2024 delivery and only the headers differ.
+
+**Three samples lost one contig each and are otherwise unchanged** — S02 `contig_06` (12,126 bp),
+S08 `contig_21` (11,121 bp) and S09 `contig_36` (8,850 bp). Each aligns end to end to the aphid
+genome assembled from the same reads, so it is host DNA that survived the 2024 contamination
+filter, not *Hamiltonella*.
+
+**Four samples changed structurally, and only where intended:**
 
 | Sample | Change |
 |---|---|
-| S03 | prophage moved into the chromosome; net **0 bp** |
-| S05 | +15,853 bp — two prophages in, three APSE fragments out |
+| S03 | prophage moved into the chromosome, net **0 bp**; four aphid contigs out (43,204 bp) |
+| S05 | +15,853 bp — two prophages in, three APSE fragments out, three aphid contigs out |
 | S07 | +39,657 bp — two prophages in, one chimeric APSE contig out |
+| S10 | +6,286 bp — two scaffold gaps filled and 200 ambiguous bases removed |
 
 The single largest correction is **S07**, where a complete APSE phage had been deleted during
 curation as a redundant duplicate. It was not redundant: the sample carries two different phages

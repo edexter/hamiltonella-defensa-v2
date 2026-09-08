@@ -24,7 +24,7 @@ else is worth investigating rather than reporting.
 USAGE
 
     python3 scripts/build_assembly_stats.py assemblies_v2 <busco_dir> \\
-            docs/curated_assembly_stats_v2.xlsx
+            deliverables/assembly_stats.xlsx
 
 <busco_dir> holds one directory per sample containing BUSCO's output. If it does
 not exist, or a sample has no summary, the assembly columns are still written and

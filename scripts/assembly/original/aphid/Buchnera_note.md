@@ -1,0 +1,3 @@
+# Notice
+
+This is just a placeholder to keep a logical folder structure. The Buchnera genome assembly was produced simultaneously with the Aphid host genome assembly, so those scripts are not duplicated here. Similarly, the Buchnera genome annotation was assembled using the NCBI prokaryotic genome annotation pipeline (PGAP) along with the Hamiltonella samples, so consult that corresponding script as needed.

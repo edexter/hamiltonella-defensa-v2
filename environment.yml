@@ -1,0 +1,33 @@
+# Conda environment for the analysis scripts in this repository.
+#
+#     conda env create -f environment.yml
+#     conda activate aphid
+#     bash scripts/check_environment.sh
+#
+# These are the versions the analysis was run with. Nearby versions should
+# behave the same way; the two that are worth not changing casually are Flye,
+# because the phage assemblies were accepted against its output, and minimap2,
+# because several thresholds in the scripts were calibrated on its alignments.
+#
+# BUSCO is deliberately NOT in this environment. It needs version 5.1.2 to keep
+# the completeness figures comparable across the panel, and 5.1.2 requires
+# Python 3.9 or earlier, which conflicts with everything else here. Create it
+# separately:
+#
+#     conda create -n busco512 -c conda-forge -c bioconda python=3.9 busco=5.1.2
+#
+# The assembly stage in scripts/assembly/ ran on a cluster under its own module
+# system and is not covered by this file; the versions used there are listed in
+# scripts/README.md.
+name: aphid
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - minimap2=2.31
+  - samtools=1.24
+  - seqtk=1.5
+  - flye=2.9.6
+  - matplotlib=3.10.6   # figures only
+  - openpyxl            # build_assembly_stats.py, for the xlsx output only

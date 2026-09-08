@@ -13,7 +13,7 @@ an assembly-wide mean describes neither.
 
 ## S01
 
-**Coverage:** 33X (*Hamiltonella*), 1313X (APSE)
+**Coverage:** 32X (*Hamiltonella*), 1313X (APSE)
 **BUSCO:** 93.9% (unchanged)
 **APSE:** 1 genotype (complete + circularized), 39,092 bp, lineage APSE-RHS-I
 
@@ -41,8 +41,8 @@ original names pH15_1 to pH15_6.
 
 ## S02
 
-**Coverage:** ?X (*Hamiltonella*), ?X (APSE)
-**BUSCO:** ?%
+**Coverage:** 15X (*Hamiltonella*), 168X (APSE)
+**BUSCO:** 81.6%
 **APSE:** 1 genotype (complete + circularized), lineage APSE-LeucineRich-I
 
 Thirteen contigs, one fewer than version 1.0. The contig that was removed,
@@ -68,8 +68,8 @@ present, so that question is open rather than answered in the negative.
 
 ## S03
 
-**Coverage:** ?X (*Hamiltonella*), ?X (APSE)
-**BUSCO:** ?%
+**Coverage:** 8X (*Hamiltonella*), 379X (APSE)
+**BUSCO:** 75.2%
 **APSE:** 1 genotype (complete + circularized), 35,455 bp, lineage APSE-CdtB-I
 
 Seventeen contigs, down from twenty-two. Four of the removed contigs — 43,204 bp
@@ -94,8 +94,8 @@ tested for the presence of a second *Hamiltonella* strain.
 
 ## S04
 
-**Coverage:** ?X (*Hamiltonella*), ?X (APSE)
-**BUSCO:** ?%
+**Coverage:** 63X (*Hamiltonella*), 2162X (APSE)
+**BUSCO:** 93.4%
 **APSE:** 1 genotype (complete + circularized), 35,455 bp, lineage APSE-CdtB-I
 
 Unchanged in sequence from version 1.0: two contigs, 2,151,406 bp. Like S01, this
@@ -113,8 +113,8 @@ coverage adequate to have detected a second of either.
 
 ## S05
 
-**Coverage:** ?X (*Hamiltonella*), ?X (APSE)
-**BUSCO:** ?%
+**Coverage:** 15X (*Hamiltonella*), 577X (APSE)
+**BUSCO:** 90.2%
 **APSE:** 3 genotypes — two complete and circularized, one partial
 
 This is the most substantially changed assembly in the panel, and the one where
@@ -148,8 +148,8 @@ version discards 42% of them at that locus.
 
 ## S06
 
-**Coverage:** ?X (*Hamiltonella*), ?X (APSE)
-**BUSCO:** ?%
+**Coverage:** 97X (*Hamiltonella*), 213X (APSE)
+**BUSCO:** 93.9%
 **APSE:** 1 genotype (complete, **not** circularized)
 
 Unchanged in sequence from version 1.0: seven contigs, 2,294,161 bp.
@@ -172,8 +172,8 @@ circular on the strength of the assembler's flag alone.
 
 ## S07
 
-**Coverage:** ?X (*Hamiltonella*), ?X (APSE)
-**BUSCO:** ?%
+**Coverage:** 38X (*Hamiltonella*), 1785X (APSE)
+**BUSCO:** 93.6%
 **APSE:** 2 genotypes (both complete + circularized)
 
 Four contigs, and 39,657 bp longer than version 1.0. This is the single largest
@@ -201,8 +201,8 @@ two integrases share no 21-mer sequence at all.
 
 ## S08
 
-**Coverage:** ?X (*Hamiltonella*), ?X (APSE)
-**BUSCO:** ?%
+**Coverage:** 6X (*Hamiltonella*), 174X (APSE)
+**BUSCO:** 85.0%
 **APSE:** 1 genotype (complete + circularized), lineage APSE-MAC-I
 
 Thirty contigs, one fewer than version 1.0. The removed contig, `contig_21`, is
@@ -223,8 +223,8 @@ claiming a scaffold on one-sided evidence. It is left unplaced on purpose.
 
 ## S09
 
-**Coverage:** ?X (*Hamiltonella*), ?X (APSE)
-**BUSCO:** ?%
+**Coverage:** 4X (*Hamiltonella*), 168X (APSE)
+**BUSCO:** 64.1%
 **APSE:** 1 genotype (complete + circularized), lineage APSE-Shiga-I
 
 Forty-two contigs, one fewer than version 1.0 after removal of `contig_36`, 8,850
@@ -247,8 +247,8 @@ evidence of a shared phage lineage.
 
 ## S10
 
-**Coverage:** ?X (*Hamiltonella*), ?X (APSE)
-**BUSCO:** ?%
+**Coverage:** 15X (*Hamiltonella*), 19X (APSE)
+**BUSCO:** 94.1%
 **APSE:** 1 genotype (**draft**, incomplete), 34,095 bp, lineage APSE-MAC-II
 
 Unchanged in sequence from version 1.0: five contigs.
@@ -272,33 +272,41 @@ rather than as a complete circular replicon.
 
 ## S11
 
-**Coverage:** ?X (*Hamiltonella*), ?X (APSE)
-**BUSCO:** ?%
+**Coverage:** 53X (*Hamiltonella*), 51X (APSE)
+**BUSCO:** 93.4%
 **APSE:** 1 genotype (complete + circularized), 40,511 bp, lineage APSE-RHS-III
 
 Unchanged in sequence from version 1.0: six contigs. The corrections here are
 entirely in what the contigs are said to be, and they are substantial.
 
-Three of the five contigs delivered as separate plasmids in version 1.0 are not
-separate plasmids:
+Two of the five contigs delivered as separate plasmids in version 1.0 are not
+separate plasmids, and a third is not what it first appeared to be:
 
-- **`contig_02`** (136,360 bp) is two plasmids that the assembler joined end to
-  end. It was never closed into a circle. The first 78 kb and the following 46 kb
-  each assemble as a separate closed circle in S01 and S06, and inside this
-  contig they abut at position ~78,178 with no overlap between them.
+- **`contig_02`** (136,360 bp) carries sequence that assembles as two separate
+  closed circles in S01 and S06, meeting at position ~78,178 with no overlap
+  between them, which initially suggested that the assembler had joined two
+  plasmids in error. Reads say otherwise. The internal junction is spanned by
+  107 reads at 150 bp either side, 80 of them by more than a kilobase, with only
+  4 of 24 nearby reads soft-clipped and no depth step across it (100.9x, 114.6x
+  and 105.1x before, across and after). The contig itself closes into a circle,
+  with 57 reads spanning the join. It is therefore a single circular molecule in
+  this strain, a **cointegrate** of two plasmids that are separate elsewhere in
+  the panel, and it is delivered as one plasmid rather than as an assembly
+  error. The recorded topology is in `data/reference/verified_topology.tsv`.
 - **`contig_04`** (28,430 bp) and **`contig_01`** (2,960 bp) are fragments of a
   third plasmid, 86% and 100% contained respectively within a contig that closes
   as a circle in S01 and S06.
 
-None of the three was closed by the assembler. Delivering them under their own
-plasmid names asserted three replicons that have not been observed, and inflated
-the plasmid count for this sample. They are now described as a mis-joined pair
-and two fragments.
+`contig_04` and `contig_01` were not closed by the assembler and do not close
+against reads, so delivering them under their own plasmid names asserted two
+replicons that have not been observed. They are now described as fragments.
 
-The direction of this correction is worth stating plainly, because it is the
-opposite of what a first look suggested: S11's plasmid assembly is the defective
-one, and the cleanly resolved plasmids of S01 and S06 are the evidence that
-proves it.
+The `contig_02` case is worth stating plainly because it was nearly got wrong in
+the other direction. Comparing assemblies to each other made it look like an
+assembly error, and only the reads settled it. Containment and position can
+establish that two elements sit in one contig; they cannot distinguish a
+mis-join from a genuine cointegrate, and a cointegrated plasmid pair is a
+described phenomenon in this system.
 
 A separate note on `contig_01`: it matches *Arsenophonus* at about 92% identity,
 which at first appeared to indicate a second symbiont. It does not. It is the
@@ -310,8 +318,8 @@ element — a single element inside a plasmid, not a second organism. No
 
 ## S12
 
-**Coverage:** ?X (*Hamiltonella*), ?X (APSE)
-**BUSCO:** ?%
+**Coverage:** 64X (*Hamiltonella*), 1922X (APSE)
+**BUSCO:** 93.6%
 **APSE:** 1 genotype (complete + circularized), lineage APSE-CdtB-III
 
 Unchanged in sequence from version 1.0: four contigs.
@@ -330,8 +338,8 @@ have detected a second of either.
 
 ## S13
 
-**Coverage:** ?X (*Hamiltonella*), ?X (APSE)
-**BUSCO:** ?%
+**Coverage:** 22X (*Hamiltonella*), 1445X (APSE)
+**BUSCO:** 93.4%
 **APSE:** 1 genotype (complete + circularized), 35,455 bp, lineage APSE-CdtB-I
 
 Unchanged in sequence from version 1.0: two contigs.
@@ -347,8 +355,8 @@ strain, so that question is left open.
 
 ## S14
 
-**Coverage:** ?X (*Hamiltonella*), ?X (APSE)
-**BUSCO:** ?%
+**Coverage:** 19X (*Hamiltonella*), 13X (APSE)
+**BUSCO:** 86.4%
 **APSE:** 1 genotype (**partial**, 19,800 bp, lineage unresolved)
 
 Unchanged in sequence from version 1.0: eight contigs.
