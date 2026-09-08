@@ -49,9 +49,9 @@ than guessed at.
 `scripts/README.md` gives the pipeline in order, says which script produces each delivered file,
 and lists the steps that were done by hand along with the file that records what was decided.
 
-The remaining documents in `docs/` are working material rather than deliverables: the project
-record, the plan, the outstanding items, the tool documentation for the screening script, the
-files received from collaborators, and the reference literature.
+The remaining documents in `docs/` support these rather than being deliverables in themselves:
+documentation for the screening tool, the curation notes written when the assemblies were first
+produced, and the files received from collaborators.
 
 ---
 

@@ -14,7 +14,7 @@ to read the files, and what the limitations are.
 | [`results/`](results/) | the phage genomes and every table produced by the analysis |
 | [`scripts/`](scripts/) | everything needed to reproduce the above from the raw reads; see [`scripts/README.md`](scripts/README.md) |
 | [`data/`](data/) | reference sequences, the sample and barcode maps, the saved contamination filters, and the one file you must edit to run anything |
-| [`docs/`](docs/) | working material: the project record, the plan, outstanding items, tool documentation, files received from collaborators, and reference literature |
+| [`docs/`](docs/) | supporting material: documentation for the screening tool, the curation notes for the assemblies, and files received from collaborators |
 
 The sequencing reads and the intermediate alignments are far too large to distribute here and are
 not included. Set the paths in `data/config.sh` to point at your own copy.
