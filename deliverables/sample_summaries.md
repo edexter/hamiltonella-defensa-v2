@@ -201,7 +201,7 @@ two integrases share no 21-mer sequence at all.
 
 ## S08
 
-**Coverage:** 6X (*Hamiltonella*), 174X (APSE)
+**Coverage:** 7X (*Hamiltonella*), 175X (APSE)
 **BUSCO:** 85.0%
 **APSE:** 1 genotype (complete + circularized), lineage APSE-MAC-I
 
@@ -223,7 +223,7 @@ claiming a scaffold on one-sided evidence. It is left unplaced on purpose.
 
 ## S09
 
-**Coverage:** 4X (*Hamiltonella*), 168X (APSE)
+**Coverage:** 5X (*Hamiltonella*), 169X (APSE)
 **BUSCO:** 64.1%
 **APSE:** 1 genotype (complete + circularized), lineage APSE-Shiga-I
 

@@ -19,7 +19,9 @@ written documents; the sequences and tables sit where the scripts write them.
 ```
 deliverables/README.md            this file: what was delivered, and its limitations
 deliverables/METHODS.txt          the methods section, written for a manuscript
-deliverables/sample_summaries.md  what changed in each of the fourteen samples, and why
+deliverables/Assembly summaries.docx  the fullest per-sample account: coverage, completeness,
+                                  what changed and every contig listed
+deliverables/sample_summaries.md  the same per-sample account in brief
 deliverables/assembly_stats.tsv   assembly statistics and BUSCO completeness, per sample
 deliverables/assembly_stats.xlsx  the same table as a spreadsheet
 ```
@@ -50,8 +52,7 @@ than guessed at.
 and lists the steps that were done by hand along with the file that records what was decided.
 
 The remaining documents in `docs/` support these rather than being deliverables in themselves:
-documentation for the screening tool, the curation notes written when the assemblies were first
-produced, and the files received from collaborators.
+documentation for the screening tool, and the files received from collaborators.
 
 ---
 
