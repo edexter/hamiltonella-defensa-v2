@@ -10,6 +10,10 @@ H76, H85, H101, H103, H131, H191, H214, H244, H402 and H619, and are referred to
 sample identifiers S01 to S14 in that order. Every line also carries the obligate endosymbiont
 Buchnera aphidicola, which likewise occurs as a single genotype across the panel.
 
+[TO BE COMPLETED: rearing conditions and line maintenance, and the procedure by which the
+fourteen H. defensa isolates were established in the common host clone.]
+
+
 2. DNA EXTRACTION AND SEQUENCING
 
 High molecular weight DNA was extracted from each line with the illustra Nucleon PhytoPure
@@ -31,6 +35,9 @@ from 0.80 to 1.40 Gb per sample, giving 99,660 to 165,563 reads per sample and 1
 total. Mean read length ranged from 7,527 to 8,639 bp and read N50 from 7,678 to 8,983 bp, so the
 recovered fragment lengths match the size selection. Full per-sample statistics are given in
 Supplementary Table S1.
+
+[TO BE COMPLETED: instrument model and chemistry, the library preparation kit, and the software
+version and settings used for circular consensus calling.]
 
 
 3. METAGENOME ASSEMBLY AND SELECTION OF HAMILTONELLA READS
@@ -494,3 +501,42 @@ publicly available Aphis fabae RNA-seq (BioSamples SAMN10606880 to SAMN10606919,
 predicted with funannotate predict using --organism other, --ploidy 2, --max_intronlen 50000,
 --repeats2evm and --optimize_augustus. Predicted proteins were searched with InterProScan
 5.71-102.0 (-goterms -pa) and the results integrated with funannotate annotate.
+
+16. SOFTWARE
+
+Where a tool was used at more than one stage, the version used at each stage is given.
+
+    hifiasm                 metagenome assembly                     [TO BE COMPLETED]
+    BlobToolKit             contig classification and filtering     [TO BE COMPLETED]
+    minimap2                alignment, assembly stage               [TO BE COMPLETED]
+    minimap2 2.31-r1302     alignment, phage reconstruction and validation
+    samtools                alignment handling, assembly stage      [TO BE COMPLETED]
+    samtools 1.24           alignment handling, phage reconstruction and validation
+    seqtk                   read subsetting, assembly stage         [TO BE COMPLETED]
+    seqtk 1.5               read subsetting, phage reconstruction
+    DIAMOND                 protein-level taxonomy                  [TO BE COMPLETED]
+    BLAST+ 2.16.0           nucleotide-level taxonomy
+    Flye 2.9.2              genome assembly, thirteen samples
+    Flye 2.9.3              genome assembly, S07
+    Flye 2.9.6              phage assembly from partitioned reads
+    BUSCO 5.1.2             completeness, with prodigal 2.6.3
+    PGAP 2026-06-18.build8602   annotation
+    funannotate             aphid gene prediction                   [TO BE COMPLETED]
+    RepeatModeler           aphid repeat modelling                  [TO BE COMPLETED]
+    RepeatMasker            aphid repeat masking                    [TO BE COMPLETED]
+    InterProScan 5.71-102.0 aphid functional annotation
+    Python 3.8              analysis scripts, standard library only
+
+Reference data: NCBI nt and new_taxdump, UniProt reference proteomes, BUSCO lineage datasets
+enterobacterales_odb10 (2020-03-06) and hemiptera_odb10 (2020-08-05), all retrieved in 2024.
+
+
+17. DATA AND CODE AVAILABILITY
+
+[TO BE COMPLETED: BioProject accession, genome accessions for the fourteen H. defensa assemblies,
+the APSE reference genomes, the aphid and Buchnera assemblies, and SRA accessions for the raw
+reads.]
+
+These genome sequences supersede the assemblies deposited under accessions [TO BE COMPLETED].
+
+All analysis code is available at https://github.com/edexter/hamiltonella-defensa-v2
